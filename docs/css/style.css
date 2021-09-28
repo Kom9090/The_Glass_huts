@@ -1025,7 +1025,7 @@ button {
   top: calc(100% - 100px);
   width: 90px;
   height: 2px;
-  left: calc(100% - 140px);
+  left: calc(1268px + 256 * ((100vw - 1408px) / (1920 - 1408)));
   background-color: rgba(255, 255, 255, 0.28);
   z-index: 5;
 }
@@ -1622,7 +1622,6 @@ button {
   -webkit-transform: translate(0, -20%) scale(0.1, 0.1);
       -ms-transform: translate(0, -20%) scale(0.1, 0.1);
           transform: translate(0, -20%) scale(0.1, 0.1);
-  border-radius: 2px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
 }
@@ -1659,24 +1658,9 @@ button {
 }
 
 .book {
-  background-color: #ffffff;
-  margin-bottom: 10px;
-  border: 1px solid #5b6460;
-}
-
-.book__form {
-  width: 671px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 66px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #333333;
-  font-family: "DINMedium";
-  font-size: 12px;
-  line-height: 16px;
 }
 
 .book__search {
@@ -1749,7 +1733,27 @@ button {
 }
 
 .book__label {
-  margin: 0 5px 3px 5px;
+  margin: 0 5px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.book__guest-text {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  color: #333333;
+  font-family: "DINMedium";
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .book__elem {
@@ -1757,29 +1761,15 @@ button {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 20%;
           flex: 1 1 20%;
-  padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.book__input-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
 }
 
 .book__btn-n {
@@ -1816,25 +1806,8 @@ button {
   -webkit-appearance: none;
 }
 
-.book__submit {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 30%;
-          flex: 1 1 30%;
-  background-color: #5b6460;
-  color: #ffffff;
-  height: 66px;
-  font-family: "DINLight";
-  font-weight: 300;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  -webkit-transition: background-color 0.4s linear;
-  -o-transition: background-color 0.4s linear;
-  transition: background-color 0.4s linear;
-}
-
-.book__submit:active {
-  background-color: #41906d;
+.book__input-guests {
+  min-width: 20px;
 }
 
 .icon-minus {
@@ -1881,6 +1854,48 @@ button {
 .calendar__slide {
   width: 312px;
   height: 296px;
+}
+
+.calendar__form {
+  width: 670px;
+  height: 66px;
+  color: #333333;
+  font-family: "DINMedium";
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.calendar__form-wrapper {
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  border: 0.7px solid #5b6460;
+}
+
+.calendar__submit {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+  background-color: #5b6460;
+  color: #ffffff;
+  height: 66px;
+  font-family: "DINLight";
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-transition: background-color 0.4s linear;
+  -o-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear;
+}
+
+.calendar__submit:active {
+  background-color: #41906d;
+}
+
+.calendar__book {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .calendar__wrapper {
@@ -1956,6 +1971,7 @@ button {
   width: 312px;
   height: 336px;
   padding: 16px;
+  margin: 0 auto;
 }
 
 .calendar__header {
@@ -2985,6 +3001,10 @@ button {
   width: 660px;
 }
 
+.booking__block {
+  margin-bottom: 75px;
+}
+
 .booking__aside {
   width: 430px;
   -webkit-box-flex: 0;
@@ -2996,10 +3016,6 @@ button {
   height: -moz-max-content;
   height: max-content;
   margin: 0 22px;
-}
-
-.services {
-  margin-bottom: 75px;
 }
 
 .services__title {
@@ -3186,58 +3202,12 @@ button {
   font-size: 24px;
 }
 
-.aside__fields {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 24px;
-}
-
-.aside__search {
+.aside__book {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 33.333%;
-          flex: 1 1 33.333%;
-  position: relative;
-}
-
-.aside__guests {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.aside__btn-n {
-  margin: 0 5px;
-}
-
-.aside__guest-text {
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  color: #333333;
-  font-family: "DINMedium";
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.aside__label {
-  height: 40px;
-  margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  border: 0.7px solid #5b6460;
+  margin-bottom: 24px;
 }
 
 .aside__btn {
@@ -3272,6 +3242,10 @@ button {
 
 .aside__hr {
   margin: 24px 0;
+}
+
+.aside__info-text {
+  margin-right: 10px;
 }
 
 .aside__discount {
@@ -3431,6 +3405,10 @@ button {
 
   .privacy__links:not(:last-child) {
     margin-right: 20px;
+  }
+
+  .swiper-container-horizontal > .intro__pagination.swiper-pagination-progressbar {
+    left: calc(100% - 140px);
   }
 
   .top__button {
@@ -3710,7 +3688,7 @@ button {
     margin: 0 auto;
   }
 
-  .services {
+  .booking__block {
     margin-bottom: calc( 15px + 60 * ((100vw - 280px) / 1128) );
   }
 }
@@ -3942,23 +3920,14 @@ button {
 
   .booking__inner {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .booking__content {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
 
   .booking__aside {
     margin: 0 auto;
-    margin-bottom: calc(30px + 70 * ((100vw - 280px) / 1640));
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
+    margin-bottom: calc(70px + 30 * ((100vw - 280px) / 1640));
   }
 }
 
@@ -4138,6 +4107,60 @@ button {
         align-self: center;
   }
 
+  .popup__close {
+    top: -25px;
+    right: 10px;
+  }
+
+  .book__search {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+  }
+
+  .book__elem {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+
+  .calendar__form {
+    height: auto;
+    width: 360px;
+  }
+
+  .calendar__submit {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+  }
+
+  .calendar__book {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .calendar__book .book__elem {
+    border-top: 0.7px solid #5b6460;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
+  }
+
+  .calendar__book .book__search:nth-of-type(2)::after {
+    display: none;
+  }
+
+  .calendar__wrapper {
+    width: 360px;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .calendar__double {
+    display: none;
+  }
+
   .hut-sliders__wrapper {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -4256,11 +4279,6 @@ button {
     max-width: 660px;
     width: auto;
   }
-
-  .booking__aside {
-    width: auto;
-    max-width: 430px;
-  }
 }
 
 @media (max-width: 768px) and (max-width: 1408px) {
@@ -4270,6 +4288,34 @@ button {
 
   .country__map {
     width: calc( 240px + 160 * ((100vw - 280px) / 1128) );
+  }
+}
+
+@media (max-width: 480px) {
+  .services__btn::before {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .booking__aside {
+    width: 100%;
+  }
+
+  .booking__aside .book__search:last-of-type::after {
+    display: none;
+  }
+
+  .aside__book {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .aside__book .book__elem {
+    border-top: 0.7px solid #5b6460;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
   }
 }
 
@@ -4332,8 +4378,7 @@ button {
   .popup__window {
     min-width: 100vw;
     min-height: 100vh;
-    border-radius: 0;
-    padding: 10px;
+    padding: 60px 0 0 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4343,6 +4388,24 @@ button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+
+  .calendar__form {
+    width: auto;
+  }
+
+  .calendar__form-wrapper {
+    width: 100%;
+  }
+
+  .calendar__wrapper {
+    width: 100%;
+    padding: 25px 0;
+  }
+
+  .calendar__btns {
+    width: 312px;
+    margin: 0 auto;
   }
 
   .gallery__wrapper {
@@ -4362,6 +4425,41 @@ button {
 
   .faq__text {
     font-size: 16px;
+  }
+
+  .booking__aside {
+    padding: 13px;
+  }
+
+  .services__cart {
+    padding: 13px;
+  }
+
+  .services__text {
+    font-size: 14px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .services__check-icon {
+    margin-right: 12px;
+  }
+
+  .services__price {
+    width: 100%;
+  }
+
+  .services__btn {
+    right: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .book__search {
+    padding: 10px;
   }
 }
 
@@ -4560,11 +4658,11 @@ button {
     border-color: #333333;
   }
 
-  .book__submit:hover {
+  .calendar__submit:hover {
     background-color: #808e88;
   }
 
-  .book__submit:active {
+  .calendar__submit:active {
     background-color: #41906d;
   }
 
