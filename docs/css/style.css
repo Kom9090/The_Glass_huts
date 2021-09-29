@@ -1498,6 +1498,10 @@ button {
           align-items: flex-end;
 }
 
+.contact__block {
+  font-style: normal;
+}
+
 .contact__adress {
   display: block;
   font-family: "OpenSans-Light";
@@ -2643,17 +2647,9 @@ button {
   position: relative;
 }
 
-.gallery__block:first-child {
-  -webkit-box-ordinal-group: 7;
-      -ms-flex-order: 6;
-          order: 6;
-}
-
 .gallery__block:nth-child(2) {
   -ms-grid-column: span 2;
       grid-column-start: span 2;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
 }
 
 .gallery__block:nth-child(4) {
@@ -4269,6 +4265,12 @@ button {
         grid-template: repeat(3, 1fr)/repeat(2, 1fr);
     margin-left: -10px;
     margin-right: -10px;
+  }
+
+  .gallery__block:first-child {
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
   }
 
   .contact-us__form {
