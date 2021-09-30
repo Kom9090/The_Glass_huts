@@ -188,6 +188,7 @@ input:focus {
   font-style: normal;
 }
 
+.pay-form__btn,
 .aside__coupon-btn,
 .aside__btn,
 .contact-us__btn,
@@ -208,6 +209,7 @@ input:focus {
   transition: background-color 0.4s linear;
 }
 
+.pay-form__btn:active,
 .aside__coupon-btn:active,
 .aside__btn:active,
 .contact-us__btn:active,
@@ -3001,19 +3003,6 @@ button {
   margin-bottom: 75px;
 }
 
-.booking__aside {
-  width: 430px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-  border: 0.7px solid #5b6460;
-  padding: 24px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  margin: 0 22px;
-}
-
 .services__title {
   font-size: 24px;
   line-height: 24px;
@@ -3187,6 +3176,19 @@ button {
   color: #333333;
 }
 
+.aside {
+  width: 430px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  border: 0.7px solid #5b6460;
+  padding: 24px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 0 22px;
+}
+
 .aside__title {
   line-height: 40px;
   color: #333333;
@@ -3260,6 +3262,117 @@ button {
 
 .aside__label-coupon:first-child {
   margin: 0;
+}
+
+.confirm__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+
+.confirm__form {
+  margin-left: calc(10px + 137 * ((100vw - 280px) / 1640));
+}
+
+.pay-form__back {
+  display: inline-block;
+  position: relative;
+  font-family: "DINLight", sans-serif;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #333333;
+  padding-left: 53px;
+  margin-bottom: 50px;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  -o-transition: transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+
+.pay-form__back::before {
+  position: absolute;
+  content: url(../image/arrow-left.svg);
+  left: 0px;
+  top: calc(50% - 15px);
+}
+
+.pay-form__back:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0.7px;
+  background-color: #333333;
+  -webkit-transform: scale(0, 1);
+      -ms-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  -o-transition: transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+
+.pay-form__personal {
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 660px;
+  margin-bottom: 50px;
+}
+
+.pay-form__personal-title {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.pay-form__label {
+  width: calc(50% - 12px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pay-form__tel-code {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25%;
+          flex: 1 1 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 0.7px solid #5b6460;
+  border-right: 0.7px solid transparent;
+}
+
+.pay-form__code-img {
+  display: block;
+}
+
+.pay-form__tel-placeholder {
+  left: 27%;
+}
+
+.pay-form__btn {
+  width: 60%;
 }
 
 @media (min-width: 769px) {
@@ -3687,6 +3800,14 @@ button {
   .booking__block {
     margin-bottom: calc( 15px + 60 * ((100vw - 280px) / 1128) );
   }
+
+  .confirm__inner {
+    padding-top: calc( 30px + 60 * ((100vw - 280px) / 1128) );
+  }
+
+  .confirm__inner {
+    padding-bottom: calc( 30px + 70 * ((100vw - 280px) / 1128) );
+  }
 }
 
 @media (max-width: 1000px) {
@@ -3921,9 +4042,16 @@ button {
             flex-direction: column-reverse;
   }
 
-  .booking__aside {
+  .aside {
     margin: 0 auto;
     margin-bottom: calc(70px + 30 * ((100vw - 280px) / 1640));
+  }
+
+  .confirm__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -4300,11 +4428,11 @@ button {
 }
 
 @media (max-width: 450px) {
-  .booking__aside {
+  .aside {
     width: 100%;
   }
 
-  .booking__aside .book__search:last-of-type::after {
+  .aside .book__search:last-of-type::after {
     display: none;
   }
 
@@ -4429,10 +4557,6 @@ button {
     font-size: 16px;
   }
 
-  .booking__aside {
-    padding: 13px;
-  }
-
   .services__cart {
     padding: 13px;
   }
@@ -4456,6 +4580,10 @@ button {
 
   .services__btn {
     right: 0;
+  }
+
+  .aside {
+    padding: 13px;
   }
 }
 
@@ -4500,6 +4628,7 @@ button {
 }
 
 @media (any-hover: hover) {
+  .pay-form__btn:hover,
   .aside__coupon-btn:hover,
   .aside__btn:hover,
   .contact-us__btn:hover,
@@ -4507,6 +4636,7 @@ button {
     background-color: #808e88;
   }
 
+  .pay-form__btn:active,
   .aside__coupon-btn:active,
   .aside__btn:active,
   .contact-us__btn:active,
@@ -4765,6 +4895,12 @@ button {
 
   .services__btn:hover::before {
     opacity: 1;
+  }
+
+  .pay-form__back:hover::after {
+    -webkit-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
 }
 

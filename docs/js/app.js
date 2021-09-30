@@ -7182,7 +7182,12 @@ var _slideToggle = function _slideToggle(target) {
   }
 };
 
-;
+; // ================= add box-shadow header, if confirm page ================
+
+if (document.querySelector(".confirm")) {
+  document.querySelector(".header__wrapper").style.boxShadow = "2px 0px 20px rgba(0, 0, 0, 0.1)";
+} // ==========================================================================;
+
 
 function testWebP(callback) {
   var webP = new Image();
