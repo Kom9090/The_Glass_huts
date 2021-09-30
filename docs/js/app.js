@@ -7276,3 +7276,31 @@ if (document.querySelector(".link-more")) {
     });
   });
 } //==========================================================
+
+
+var anchors = document.querySelectorAll('a[href*="#"]');
+
+var _iterator2 = _createForOfIteratorHelper(anchors),
+    _step2;
+
+try {
+  var _loop4 = function _loop4() {
+    var anchor = _step2.value;
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      var blockID = anchor.getAttribute('href').substr(1);
+      document.getElementById(blockID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  };
+
+  for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+    _loop4();
+  }
+} catch (err) {
+  _iterator2.e(err);
+} finally {
+  _iterator2.f();
+}
