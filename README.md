@@ -1,11 +1,11 @@
-# Glass_huts
+# The_Glass_huts
 
 Website for the hotel, educational project
 
-[link>>>](https://kom9090.github.io/The_Glass_huts/)
+[link_>>>](https://kom9090.github.io/The_Glass_huts/)
 
 
-![site](./others/gh-screen.jpg)
+![screen](./others/gh-screen.jpg)
 
 
 ## Tech
@@ -14,3 +14,12 @@ Website for the hotel, educational project
 - SCSS;
 - JavaScript;
 - Gulp;
+
+## Plugins
+
+- AOS; 
+- leaflet;
+- leaflet-gesture handling;
+- vivus;
+- swiper;
+- fslightbox;

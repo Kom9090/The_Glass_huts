@@ -7507,9 +7507,33 @@ var _slideToggle = function _slideToggle(target) {
 
 if (document.querySelector(".confirm")) {
   document.querySelector(".header__wrapper").style.boxShadow = "2px 0px 20px rgba(0, 0, 0, 0.1)";
-} // ==========================================================================;
+} // ====================select tel code======================================
 
 
+window.addEventListener('DOMContentLoaded', function () {
+  var selectBtn = document.querySelector(".select-code__value");
+  var selectValue = document.querySelector(".select-code__value");
+  var optionsBtns = document.querySelectorAll(".select-code__option");
+  var list = document.querySelector(".select-code__list");
+  var telInput = document.querySelector("#phone");
+  selectBtn.addEventListener("click", function () {
+    list.classList.toggle("_show-list");
+    document.documentElement.addEventListener("click", function (event) {
+      if (!event.target.closest(".select-code__value")) {
+        list.classList.remove("_show-list");
+      }
+    });
+  });
+  optionsBtns.forEach(function (item) {
+    item.addEventListener("click", function () {
+      selectValue.append(item.firstElementChild);
+      item.append(selectValue.firstElementChild);
+      list.classList.remove("_show-list");
+    });
+  });
+}); //================ tel mask ==============================
+
+;
 'use strict'; // polyfill
 
 
@@ -7970,7 +7994,8 @@ try {
 
   for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
     _loop4();
-  }
+  } //=================================================================
+
 } catch (err) {
   _iterator2.e(err);
 } finally {

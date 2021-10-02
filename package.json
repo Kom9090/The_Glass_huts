@@ -36,6 +36,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "fslightbox": "^3.3.0-2",
+    "inputmask": "^5.0.6",
     "leaflet": "^1.7.1",
     "leaflet-gesture-handling": "^1.2.1",
     "swiper": "^6.8.2",
