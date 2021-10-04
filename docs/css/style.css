@@ -652,19 +652,6 @@ button {
           align-items: center;
 }
 
-.select-lang._hover-class .select-lang__menu {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  top: 55px;
-}
-
-.select-lang._hover-class .select-lang__triangle {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
 .select-lang__btn {
   padding: 0;
   display: -webkit-box;
@@ -675,9 +662,20 @@ button {
           align-items: center;
 }
 
+.select-lang__btn._selected .select-lang__triangle {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .select-lang__triangle {
   width: 13px;
   height: 13px;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  -o-transition: transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
 }
 
 .select-lang__menu {
@@ -707,6 +705,35 @@ button {
           box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
+}
+
+.select-lang__menu._show-list {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  top: 55px;
+}
+
+.select-lang__item {
+  width: 100%;
+  height: 100%;
+}
+
+.select-lang__option {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: background-color 0.3s linear;
+  -o-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
 }
 
 .select-lang__flag {
@@ -2824,8 +2851,8 @@ button {
 }
 
 .contact-us__input:focus {
-  -webkit-box-shadow: inset 1px 1px 2px rgba(51, 51, 51, 0.3);
-          box-shadow: inset 1px 1px 2px rgba(51, 51, 51, 0.3);
+  -webkit-box-shadow: 0px 0px 7px rgba(0, 38, 252, 0.4);
+          box-shadow: 0px 0px 7px rgba(0, 38, 252, 0.4);
 }
 
 .contact-us__area {
@@ -2848,8 +2875,8 @@ button {
 }
 
 .contact-us__area:focus {
-  -webkit-box-shadow: inset 1px 1px 2px rgba(51, 51, 51, 0.3);
-          box-shadow: inset 1px 1px 2px rgba(51, 51, 51, 0.3);
+  -webkit-box-shadow: 0px 0px 7px rgba(0, 38, 252, 0.4);
+          box-shadow: 0px 0px 7px rgba(0, 38, 252, 0.4);
 }
 
 .contact-us__btn {
@@ -3343,6 +3370,12 @@ button {
 .pay-form__personal-title {
   width: 100%;
   margin-bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .pay-form__label {
@@ -3350,6 +3383,10 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.pay-form__area {
+  width: 100%;
 }
 
 .pay-form__tel-code {
@@ -3375,6 +3412,31 @@ button {
   width: 60%;
 }
 
+.pay-form__bank-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.pay-form__list-item {
+  margin-left: 19px;
+}
+
+.pay-form__list-img {
+  display: block;
+  -webkit-transition: -webkit-filter 0.3s linear;
+  transition: -webkit-filter 0.3s linear;
+  -o-transition: filter 0.3s linear;
+  transition: filter 0.3s linear;
+  transition: filter 0.3s linear, -webkit-filter 0.3s linear;
+}
+
 .select-code__value {
   width: 100%;
   height: 100%;
@@ -3396,14 +3458,9 @@ button {
 .select-code__list {
   opacity: 0;
   visibility: hidden;
-  -webkit-transform: translateY(-60%);
-      -ms-transform: translateY(-60%);
-          transform: translateY(-60%);
-  -webkit-transition: opacity 0.2s linear, -webkit-transform 0.2s linear;
-  transition: opacity 0.2s linear, -webkit-transform 0.2s linear;
-  -o-transition: transform 0.2s linear, opacity 0.2s linear;
-  transition: transform 0.2s linear, opacity 0.2s linear;
-  transition: transform 0.2s linear, opacity 0.2s linear, -webkit-transform 0.2s linear;
+  -webkit-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
   position: absolute;
   top: 110%;
   background-color: rgba(255, 255, 255, 0.25);
@@ -3429,9 +3486,6 @@ button {
 .select-code__list._show-list {
   opacity: 1;
   visibility: visible;
-  -webkit-transform: translateY(0%);
-      -ms-transform: translateY(0%);
-          transform: translateY(0%);
 }
 
 .select-code__option {
@@ -3450,6 +3504,169 @@ button {
   -webkit-transition: background-color 0.2s linear;
   -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
+}
+
+.country {
+  position: relative;
+}
+
+.country__btn {
+  cursor: pointer;
+}
+
+.country__btn._selected + .country__select-btn {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.country__select-btn {
+  position: absolute;
+  pointer-events: none;
+  width: 36px;
+  height: 36px;
+  background-color: #e9ece0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: calc(50% - 18px);
+  right: 10px;
+  -webkit-transition: background-color 0.3s linear;
+  -o-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+
+.country__input {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  color: #333333;
+  cursor: pointer;
+}
+
+.country__select-img {
+  display: block;
+}
+
+.country__list {
+  position: absolute;
+  height: 300px;
+  overflow-y: auto;
+  top: 100%;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 10px 0;
+  -webkit-box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  z-index: 2;
+}
+
+.country__list._show-list {
+  opacity: 1;
+  visibility: visible;
+}
+
+.country__list._show-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.country__list._show-list::-webkit-scrollbar-thumb {
+  background-color: #808e88;
+  border-radius: 10px;
+}
+
+.country__list._show-list::-webkit-scrollbar-track {
+  background-color: #efefef;
+  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.country__option {
+  line-height: 32px;
+  cursor: pointer;
+  -webkit-transition: baclground-color 0.3s linear;
+  -o-transition: baclground-color 0.3s linear;
+  transition: baclground-color 0.3s linear;
+  padding: 0 24px;
+}
+
+.card__label {
+  width: 100%;
+}
+
+.card__info {
+  width: 50%;
+}
+
+.card__ccv {
+  border-left: 0.7px solid transparent;
+}
+
+.card__btn {
+  cursor: pointer;
+}
+
+.card__btn._selected + .country__select-btn {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.card__list {
+  position: absolute;
+  height: 84px;
+  overflow-y: auto;
+  top: 100%;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 10px 0;
+  -webkit-box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  z-index: 2;
+}
+
+.card__list._show-list {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card__input {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  color: #333333;
+  cursor: pointer;
+}
+
+.card__option {
+  line-height: 32px;
+  cursor: pointer;
+  -webkit-transition: baclground-color 0.3s linear;
+  -o-transition: baclground-color 0.3s linear;
+  transition: baclground-color 0.3s linear;
+  padding: 0 24px;
 }
 
 @media (min-width: 769px) {
@@ -4011,10 +4228,6 @@ button {
     z-index: 21;
   }
 
-  .select-lang._hover-class .select-lang__menu {
-    top: 50px;
-  }
-
   .select-lang {
     margin-left: 0;
   }
@@ -4030,6 +4243,10 @@ button {
     -webkit-backdrop-filter: none;
             backdrop-filter: none;
     width: auto;
+  }
+
+  .select-lang__menu._show-list {
+    top: 50px;
   }
 
   .footer__inner {
@@ -4785,6 +5002,10 @@ button {
             transform: scale(1, 1);
   }
 
+  .select-lang__option:hover {
+    background-color: #efefef;
+  }
+
   ._active-lang:hover {
     -webkit-filter: drop-shadow(1px 1px 10px rgba(0, 255, 128, 0.35));
             filter: drop-shadow(1px 1px 10px rgba(0, 255, 128, 0.35));
@@ -4935,13 +5156,13 @@ button {
   }
 
   .contact-us__input:hover {
-    -webkit-box-shadow: inset 1px 1px 2px rgba(51, 51, 51, 0.3);
-            box-shadow: inset 1px 1px 2px rgba(51, 51, 51, 0.3);
+    -webkit-box-shadow: 0px 0px 7px rgba(0, 38, 252, 0.4);
+            box-shadow: 0px 0px 7px rgba(0, 38, 252, 0.4);
   }
 
   .contact-us__area:hover {
-    -webkit-box-shadow: inset 1px 1px 4px rgba(51, 51, 51, 0.3);
-            box-shadow: inset 1px 1px 4px rgba(51, 51, 51, 0.3);
+    -webkit-box-shadow: 0px 0px 7px rgba(0, 38, 252, 0.4);
+            box-shadow: 0px 0px 7px rgba(0, 38, 252, 0.4);
   }
 
   .faq__title:hover {
@@ -4981,11 +5202,32 @@ button {
   }
 
   .pay-form__tel-code:hover {
-    -webkit-box-shadow: inset 1px 1px 2px rgba(51, 51, 51, 0.3);
-            box-shadow: inset 1px 1px 2px rgba(51, 51, 51, 0.3);
+    -webkit-box-shadow: 0px 0px 7px rgba(0, 38, 252, 0.4);
+            box-shadow: 0px 0px 7px rgba(0, 38, 252, 0.4);
+  }
+
+  .pay-form__list-link:hover .pay-form__list-img {
+    -webkit-filter: drop-shadow(1px 1px 12px rgba(0, 255, 128, 0.95));
+            filter: drop-shadow(1px 1px 12px rgba(0, 255, 128, 0.95));
   }
 
   .select-code__option:hover {
+    background-color: #efefef;
+  }
+
+  .country__btn:hover + .country__select-btn {
+    background-color: #808e88;
+  }
+
+  .country__option:hover {
+    background-color: #efefef;
+  }
+
+  .card__btn:hover + .country__select-btn {
+    background-color: #808e88;
+  }
+
+  .card__option:hover {
     background-color: #efefef;
   }
 }

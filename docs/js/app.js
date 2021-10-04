@@ -6401,15 +6401,6 @@ document.querySelector(".header__menu-icon").addEventListener("click", function 
   } else {
     bodyUnLock();
   }
-}); //select lang
-
-document.querySelector(".select-lang").addEventListener("click", function () {
-  document.querySelector(".select-lang").classList.toggle("_hover-class");
-});
-document.documentElement.addEventListener("click", function (event) {
-  if (!event.target.closest(".select-lang")) {
-    document.querySelector(".select-lang").classList.remove("_hover-class");
-  }
 }); // opacity scroll-header
 
 window.onload = function () {
@@ -7095,7 +7086,7 @@ document.addEventListener("DOMContentLoaded", function () {
       input[i].previousElementSibling.classList.add("_focus-input");
     });
     input[i].addEventListener("blur", function (e) {
-      if (input[i].value == "") {
+      if (input[i].value === "") {
         input[i].previousElementSibling.classList.remove("_focus-input");
       }
     });
@@ -7507,32 +7498,126 @@ var _slideToggle = function _slideToggle(target) {
 
 if (document.querySelector(".confirm")) {
   document.querySelector(".header__wrapper").style.boxShadow = "2px 0px 20px rgba(0, 0, 0, 0.1)";
-} // ====================select tel code======================================
+} //================ tel mask ==============================
 
+
+window.addEventListener("DOMContentLoaded", function () {
+  var telInput = document.querySelector("#phone");
+  [].forEach.call(document.querySelectorAll('#phone'), function (input) {
+    var keyCode;
+
+    function mask(event) {
+      event.keyCode && (keyCode = event.keyCode);
+      var pos = this.selectionStart;
+      if (pos < 3) event.preventDefault();
+      var matrix = "+44 (___) ___ ____",
+          i = 0,
+          def = matrix.replace(/\D/g, ""),
+          val = this.value.replace(/\D/g, ""),
+          new_value = matrix.replace(/[_\d]/g, function (a) {
+        return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
+      });
+      i = new_value.indexOf("_");
+
+      if (i != -1) {
+        i < 5 && (i = 3);
+        new_value = new_value.slice(0, i);
+      }
+
+      var reg = matrix.substr(0, this.value.length).replace(/_+/g, function (a) {
+        return "\\d{1," + a.length + "}";
+      }).replace(/[+()]/g, "\\$&");
+      reg = new RegExp("^" + reg + "$");
+      if (!reg.test(this.value) || this.value.length < 6 || keyCode > 47 && keyCode < 58) this.value = new_value;
+
+      if (event.type == "blur" && this.value.length < 6) {
+        this.value = "";
+        telInput.previousElementSibling.classList.remove("_focus-input");
+      }
+    }
+
+    input.addEventListener("input", mask, false);
+    input.addEventListener("focus", mask, false);
+    input.addEventListener("blur", mask, false);
+    input.addEventListener("keydown", mask, false);
+  });
+}); //=========================================================
 
 window.addEventListener('DOMContentLoaded', function () {
-  var selectBtn = document.querySelector(".select-code__value");
-  var selectValue = document.querySelector(".select-code__value");
-  var optionsBtns = document.querySelectorAll(".select-code__option");
-  var list = document.querySelector(".select-code__list");
-  var telInput = document.querySelector("#phone");
-  selectBtn.addEventListener("click", function () {
-    list.classList.toggle("_show-list");
-    document.documentElement.addEventListener("click", function (event) {
-      if (!event.target.closest(".select-code__value")) {
-        list.classList.remove("_show-list");
+  var selects = document.querySelectorAll(".select");
+  var optionLists = document.querySelectorAll(".option-list");
+  var selectLang = document.querySelector(".select-lang");
+  var selectTel = document.querySelector(".select-code");
+  var selectCountry = document.querySelector(".country");
+  var card = document.querySelector(".card");
+  var langOptions = document.querySelectorAll(".select-lang__option");
+  var codeOptions = document.querySelectorAll(".select-code__option");
+  var countryOptions = document.querySelectorAll(".country__option");
+  var cardOptions = document.querySelectorAll(".card__option");
+  selects.forEach(function (select, i) {
+    var selectParent = select.parentElement;
+    select.addEventListener("click", function () {
+      optionLists[i].classList.toggle("_show-list");
+      select.classList.toggle("_selected");
+    });
+    localChanges(selectParent, select);
+    document.addEventListener("click", function (event) {
+      if (!event.target.closest(".select")) {
+        for (var n = 0; n < optionLists.length; n++) {
+          optionLists[n].classList.remove("_show-list");
+          select.classList.remove("_selected");
+        }
       }
     });
   });
-  optionsBtns.forEach(function (item) {
-    item.addEventListener("click", function () {
-      selectValue.append(item.firstElementChild);
-      item.append(selectValue.firstElementChild);
-      list.classList.remove("_show-list");
-    });
-  });
-}); //================ tel mask ==============================
 
+  function localChanges(selectParent, select) {
+    switch (selectParent) {
+      case selectLang:
+        langOptions.forEach(function (item) {
+          item.addEventListener("click", function () {
+            item.prepend(select.firstElementChild);
+            console.log("ale");
+            select.prepend(item.lastElementChild);
+            select.nextElementSibling.classList.remove("_show-list");
+            select.classList.remove("_selected");
+          });
+        });
+        break;
+
+      case selectTel:
+        codeOptions.forEach(function (item) {
+          item.addEventListener("click", function () {
+            select.append(item.firstElementChild);
+            item.append(select.firstElementChild);
+            select.nextElementSibling.classList.remove("_show-list");
+            select.classList.remove("_selected");
+          });
+        });
+        break;
+
+      case selectCountry:
+        countryOptions.forEach(function (item) {
+          item.addEventListener("click", function () {
+            var countryValue = document.querySelector(".country__btn");
+            countryValue.value = item.firstElementChild.value;
+            countryValue.focus();
+          });
+        });
+        break;
+
+      case card:
+        cardOptions.forEach(function (item) {
+          item.addEventListener("click", function () {
+            var cardValue = document.querySelector(".card__btn");
+            cardValue.value = item.firstElementChild.value;
+            cardValue.focus();
+          });
+        });
+        break;
+    }
+  }
+});
 ;
 'use strict'; // polyfill
 
@@ -7968,36 +8053,43 @@ if (document.querySelector(".link-more")) {
 } //==========================================================
 
 
-var anchors = document.querySelectorAll('a[href*="#"]');
+if (document.querySelector(".contact-us__input")) {
+  (function () {
+    var getInputFocus = function getInputFocus() {
+      var input = document.querySelector(".contact-us__input");
+      input.focus();
+    };
 
-var _iterator2 = _createForOfIteratorHelper(anchors),
-    _step2;
+    var anchors = document.querySelectorAll('.anchor-link');
 
-try {
-  var _loop4 = function _loop4() {
-    var anchor = _step2.value;
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
+    var _iterator2 = _createForOfIteratorHelper(anchors),
+        _step2;
 
-      if (anchor == document.querySelector(".transparent-link")) {
-        var input = document.querySelector(".contact-us__input");
-        input.focus();
+    try {
+      var _loop4 = function _loop4() {
+        var anchor = _step2.value;
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          if (anchor == document.querySelector(".anchor-link")) {
+            setTimeout(getInputFocus, 500);
+          }
+
+          var blockID = anchor.getAttribute('href').substr(1);
+          document.getElementById(blockID).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+      };
+
+      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+        _loop4();
       }
-
-      var blockID = anchor.getAttribute('href').substr(1);
-      document.getElementById(blockID).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    });
-  };
-
-  for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-    _loop4();
-  } //=================================================================
-
-} catch (err) {
-  _iterator2.e(err);
-} finally {
-  _iterator2.f();
-}
+    } catch (err) {
+      _iterator2.e(err);
+    } finally {
+      _iterator2.f();
+    }
+  })();
+} //=================================================================
