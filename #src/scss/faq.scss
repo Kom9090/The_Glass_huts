@@ -1,0 +1,99 @@
+.faq {
+
+    &__wrapper {
+        @extend %paddingBottom;
+        @include a-sizes("margin-top", 100, 20, 1);
+        @include a-sizes("padding-left", 137, 10, 0);
+        @include a-sizes("padding-right", 137, 10, 0);
+        @media (max-width: $tablet-wide) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        width: 774px;
+        @media (max-width: $tablet-wide) {
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+
+    &__list-item {
+        width: 100%;  
+    }
+
+    &__title {
+        width: 100%;
+        height: 60px;
+        border: 0.7px solid $forest;
+        padding: 5px 24px;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.3s linear;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $rose;
+            }
+        }
+        &._close-spr {
+            border: 0.7px solid transparent;
+            background-color: $rose;
+        }
+        &._close-spr  .faq__arrow-img {
+            
+            transform: rotate(-90deg);
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 18px;
+        color: #333333;
+        text-transform: uppercase;
+        margin-right: 10px;
+        @media (max-width: $phone) {
+           font-size: 16px;
+        }
+    }
+
+    &__title-arrow {
+        
+        width: 34px;
+        height: 34px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $rose;
+        transition: background-color 0.3s linear;
+    }
+
+    &__arrow-img {
+        display: block;
+        transition: transform 0.3s linear;
+        transform: rotate(90deg);
+    }
+
+    &__text-content {
+        padding: 24px;
+        background-color: $rose;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+.faq__title._close-spr {
+    
+    @media (any-hover: hover) {
+        &:hover {
+            & .faq__title-arrow {
+                background-color: $hg;
+            }
+        }
+    }
+}

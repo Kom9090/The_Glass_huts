@@ -1,0 +1,137 @@
+//medias
+$phone: 400px;
+$tablet: 768px;
+$tablet-wide: 1000px;
+//colors
+$white: #ffffff;
+$black: #000;
+$forest: #5b6460;
+$lgreen: #e9ece0;
+$green: #41906d;
+$rose: #e9ece0;
+$dark: #333333;
+$grey: #efefef;
+$hg: #808e88;
+//sizes
+$minWidth: 280;
+$maxWidth: 1920;
+$container: 1408;
+//mixins
+@mixin a-sizes($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+    $Width: $maxWidth - $minWidth;
+    @if $type==1 {
+        #{$property}: $startSize + px;
+        @media (max-width: #{$container + px}) {
+            #{$property}: calc(
+                #{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$container - $minWidth})
+            );
+        }
+    } @else if $type==2 {
+        #{$property}: $startSize + px;
+        @media (min-width: #{$container + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$Width}));
+        }
+    } @else {
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$Width}));
+    }
+}
+//patterns
+%button-small {
+    text-align: center;
+    padding: 16px;
+    background-color: $forest;
+    font-family: "DINLight";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $white;
+    transition: background-color 0.4s linear;
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: $hg;
+        }
+        &:active {
+            background-color: $green;
+        }
+    }
+    &:active {
+        background-color: $green;
+    }
+}
+
+%link {
+    font-family: "OpenSans-Italic";
+    font-size: 16px;
+    line-height: 30px;
+    color: $forest;
+    position: relative;
+    transition: color 0.3s linear;
+    display: inline-block;
+    padding: 0;
+    &::after, &::before {
+        position: absolute;
+	    top: 100%;
+	    left: 0;
+	    width: 100%;
+	    height: 2px;
+	    background-color: $forest;
+	    content: "";
+        transition: background-color 0.3s linear, transform 0.3s linear;
+    }
+    &::after {
+        opacity: 0;
+        transition: top 0.3s linear, opacity 0.3s linear, background-color 0.3s linear, transform 0.3s linear;
+    }
+    &:focus::before,
+    &:focus::after {
+        transform: scale(1.1);
+        background-color: $green;
+    }
+    &:focus::after {
+        top: 0%;
+        opacity: 1;
+    }
+    @media (any-hover: hover) {
+        &:hover::before,
+        &:hover::after {
+	        transform: scale(1.1);
+            background-color: $green;
+        }
+        &:hover::after {
+            top: 0%;
+            opacity: 1;
+        }
+        &:hover {
+            color: $green;
+        }
+    }
+}
+%paddingBottom {
+    @include a-sizes("padding-bottom", 150, 65, 1);
+}
+%hideText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+}
+
+%btn-next-prev {
+    top: calc(100% - 30px);
+    left: 5px;
+    position: absolute;
+    cursor: pointer;
+    
+    padding: 5px 8px;
+    transition: box-shadow 0.3s linear;
+    @media (any-hover: hover) {
+        &:hover {
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+        }
+    }
+}

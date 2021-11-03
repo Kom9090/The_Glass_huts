@@ -4102,6 +4102,10 @@ button {
   .confirm__inner {
     padding-bottom: calc( 30px + 70 * ((100vw - 280px) / 1128) );
   }
+
+  .confirm__form {
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 1000px) {

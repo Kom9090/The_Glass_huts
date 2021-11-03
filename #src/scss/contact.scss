@@ -1,0 +1,101 @@
+.contact {
+    &__inner {
+        @extend %paddingBottom;
+        @include a-sizes("padding-top", 150, 65, 1);
+        @include a-sizes("padding-left", 137, 10, 0);
+        @include a-sizes("padding-right", 137, 10, 0);
+        max-width: 1392px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        margin-bottom: 5px;
+        @media (max-width: $container + px) {
+            margin-bottom: 5px;
+        }
+        @media (max-width: $tablet) {
+            margin-bottom: 45px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        @media (max-width: $tablet) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__block {
+        font-style: normal;
+        @media (max-width: $tablet) {
+            &:last-child {
+                margin-top: 40px;
+                align-self: center;
+            }
+        }
+    }
+
+    &__adress {
+        display: block;
+        font-family: "OpenSans-Light";
+        font-size: 16px;
+        line-height: 30px;
+        color: $black;
+        &:first-child {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__social {
+        margin-top: 45px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background-color: $forest;
+        border-radius: 50%;
+        transition: background-color 0.3s linear;
+        &:not(:last-child) {
+            @include a-sizes("margin-right", 43, 20, 1);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $hg;
+            }
+            &:active {
+                background-color: $green;
+            }
+        }
+        &:active {
+            background-color: $green;
+        }
+    }
+
+    &__social-img {
+        display: block;
+    }
+    &__slider {
+        height: 188px;
+        @include a-sizes("width", 383, 340, 1);
+        overflow: hidden;
+        @media (max-width: $phone) {
+            width: calc(100vw - 40px);
+        }
+    }
+    &__slide {
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; 
+    }
+}

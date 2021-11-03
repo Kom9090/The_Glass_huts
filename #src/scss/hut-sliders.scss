@@ -1,0 +1,240 @@
+
+.hut-sliders {
+
+    &__inner {
+        @extend %paddingBottom;
+        @include a-sizes("padding-left", 137, 10, 0);
+        @include a-sizes("padding-right", 137, 10, 0);
+        
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: $tablet) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__slider {
+        flex: 0 0 50%;
+        min-width: 0px;
+        padding-bottom: 70px;
+        @media (max-width: $tablet) {
+            flex: 0 0 100%;
+            order: 2;
+        }
+    }
+
+    &__slide {
+        height: 478px;
+        @include a-sizes("width", 546, 260, 1);
+        overflow: hidden;
+        @media (max-width: $tablet) {
+            height: calc(260px + 218 * ((100vw - 280px) / (769 - 280)));
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__title {
+        @include a-sizes("margin-top", 67, 10, 1);
+        @include a-sizes("margin-bottom", 50, 10, 1);
+    }
+
+    &__tabs {
+        @include a-sizes("margin-bottom", 48, 10, 1);
+    }
+
+    &__btn {
+        font-family: "OpenSans-Italic";
+        font-size: 16px;
+        line-height: 30px;
+        color: $forest;
+        position: relative;
+        transition: color 0.3s linear;
+        display: inline-block;
+        padding: 0;
+        margin-right: 30px;
+        &::after, &::before {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $forest;
+            content: "";
+            opacity: 0;
+            transition: background-color 0.3s linear, transform 0.3s linear;
+        }
+        &::after {
+            transition: top 0.3s linear, opacity 0.3s linear, background-color 0.3s linear, transform 0.3s linear;
+        }
+        &:focus::before,
+        &:focus::after {
+            transform: scale(1.1);
+            background-color: $green;
+        }
+        &:focus::after {
+            top: 0%;
+            opacity: 1;
+        }
+        @media (any-hover: hover) {
+            &:hover::before,
+            &:hover::after {
+                transform: scale(1.1);
+                background-color: $green;
+                opacity: 1;
+            }
+            &:hover::after {
+                top: 0%;
+            }
+            &:hover {
+                color: $green;
+            }
+        }
+        &._active-tab {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__text {
+        @include a-sizes("max-width", 465, 130, 1);
+        font-family: "OpenSans-Light";
+        font-size: 16px;
+        line-height: 30px;
+        color: $dark;
+        display: none;
+        @include a-sizes("margin-bottom", 20, 10, 1);
+        @extend %hideText;
+        @media (max-width: $tablet) {
+            max-width: 100%;
+        }
+        &._active-tab {
+            display: -webkit-box;
+        }
+    }
+}
+
+.outside-swiper {
+
+    &__prev {
+        @extend %btn-next-prev;
+    }
+
+    &__next {
+        @extend %btn-next-prev;
+        left: 70px;
+    }
+
+    
+}
+.swiper-container-horizontal>.outside-swiper__pagination.swiper-pagination-progressbar {
+    top: calc(100% - 18px);
+    width: 90px;
+    height: 2px;
+    left: calc(100% - 100px);
+    background-color: #DCDCDC;
+}
+.outside-swiper__pagination {
+    & .swiper-pagination-progressbar-fill{
+        background-color: $dark;
+    }
+}
+
+.outside {
+
+    &__slider {
+        margin-left: 0px;
+    }
+
+    &__info {
+        @media (min-width: 769px) {
+            @include a-sizes("padding-left", 140, 10, 1); 
+        }  
+        @media (max-width: $tablet) {
+            padding-bottom: 20px;
+        }   
+    }
+}
+.inside {
+
+    &__slider {
+        margin-right: 0px;
+    }
+
+    &__info {
+        @media (max-width: $tablet) {
+            padding-bottom: 20px;
+        } 
+    }
+}
+.inside-swiper {
+
+    &__prev {
+        @extend %btn-next-prev;
+    }
+
+    &__next {
+        @extend %btn-next-prev;
+        left: 70px;
+    }
+}
+.swiper-container-horizontal>.inside-swiper__pagination.swiper-pagination-progressbar {
+    top: calc(100% - 18px);
+    width: 90px;
+    height: 2px;
+    left: calc(100% - 100px);
+    background-color: #DCDCDC;
+}
+.inside-swiper__pagination {
+    & .swiper-pagination-progressbar-fill{
+        background-color: $dark;
+    }
+}
+
+.practicalities {
+
+    &__slider {
+        margin-left: 0px;
+    }
+
+    &__info {
+        @media (min-width: 769px) {
+            @include a-sizes("padding-left", 140, 10, 1); 
+        }
+        @media (max-width: $tablet) {
+            padding-bottom: 20px;
+        } 
+    }
+}
+.practicalities-swiper {
+
+    &__prev {
+        @extend %btn-next-prev;
+    }
+
+    &__next {
+        @extend %btn-next-prev;
+        left: 70px;
+    }
+}
+.swiper-container-horizontal>.practicalities-swiper__pagination.swiper-pagination-progressbar {
+    top: calc(100% - 18px);
+    width: 90px;
+    height: 2px;
+    left: calc(100% - 100px);
+    background-color: #DCDCDC;
+}
+.practicalities-swiper__pagination {
+    & .swiper-pagination-progressbar-fill{
+        background-color: $dark;
+    }
+}

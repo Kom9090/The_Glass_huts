@@ -1,0 +1,209 @@
+.calendar {
+
+    &__wrapper {
+        background-color: $white;
+        width: 673px;
+        height: 420px; 
+        padding: 25px;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        transition: transform 0.3s linear, opacity 0.3s linear;
+        &._hide-calendar {
+            transform: translateY(-50%) scale(1, 0);
+            opacity: 0.1;
+        }
+        @media (max-width: $tablet) {
+            width: 360px;
+            grid-template-columns: 1fr;
+        }
+        @media (max-width: $phone) {
+            width: 100%;
+            padding: 25px 0;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 40px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0.7px solid $white;
+        cursor: pointer;
+        transition: background-color 0.3s linear, border-color 0.3s linear;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $lgreen;
+                border-color: $dark;
+            }
+        }
+        &.arrow-disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+    }
+    &__prev {
+        left: 40px;
+    }
+
+    &__arrow-prev {
+        display: block;
+        transform: rotate(180deg);
+    }
+
+    &__next {
+        right: 40px;
+    }
+
+    &__arrow-next {
+        display: block;
+    }
+
+    &__inner {
+        width: 312px;
+        height: 336px;
+        padding: 16px;
+        margin: 0 auto;
+        
+    }
+
+    &__header {
+        width: 100%;
+        min-height: 20px;
+        margin: 10px 0; 
+    }
+
+    &__table {
+        
+    }
+
+    &__btns {
+        grid-column-start: span 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        @media (max-width: $phone) {
+            width: 312px;
+            margin: 0 auto;
+        }
+    }
+
+    &__reset-form {
+        font-family: "OpenSans-SemiBold", sans-serif;
+        font-size: 14px;
+        line-height: 18px;
+        display: flex;
+        align-items: center; 
+        color: $dark;
+        margin-right: 20px;
+        transition: text-decoration-line 0.3s linear, ;
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration-line: underline;
+            }
+            &:active {
+                color: $green;
+            }
+        }
+        &:active {
+            color: $green;
+        }
+    }
+
+    &__hide {
+        background: $forest;
+        width: 67px;
+        height: 32px;
+        color: $white;
+        font-family: "OpenSans-Regular", sans-serif;
+        transition: background-color 0.4s linear;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $hg;
+            }
+            &:active {
+                background-color: $green;
+            }
+        }
+        &:active {
+            background-color: $green;
+        }
+    }
+
+    &__double {
+        @media (max-width: $tablet) {
+            display: none;
+        }
+    }
+}
+
+
+
+.date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__month {
+        font-family: "OpenSans-Regular";
+        font-size: 16px;
+        line-height: 16px;
+        text-align: center;
+        color: #000000;
+    }
+}
+.weekdays {
+    display: flex;
+    align-items: center;
+    &__name {
+        font-family: "OpenSans-Regular", sans-serif;
+        font-size: 12px;
+        line-height: 40px;
+        text-align: center;
+        color: #828282;
+        width: calc(280px / 7);
+    }
+}
+.days {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.day {
+    font-family: "OpenSans-Regular", sans-serif;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    width: calc(280px / 7);
+    color: #333333;
+    cursor: pointer;
+    transition: background-color 0.1s linear;
+    &.today {
+        border: 1px solid $forest;
+    }
+    &._checked {
+        background-color: $forest;
+        color: $white;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $green;
+            }
+        }
+    }
+    &._checked-up {
+        background-color: $forest;
+        color: $white;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $green;
+            }
+        }
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: $lgreen;
+        }
+    }
+}

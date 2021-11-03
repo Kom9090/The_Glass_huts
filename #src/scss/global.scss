@@ -1,0 +1,148 @@
+
+body {
+    min-width: $minWidth + px;
+    overflow-x: hidden;
+    position: relative;
+    overflow: auto;
+    font-family: "OpenSans-Regular";
+    &.lock {
+        overflow: hidden;
+    }
+    &._lock {
+        overflow: hidden;
+    }
+}
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+    background-color: inherit;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 100px;
+    @media (max-width: $phone) {
+        padding-top: 70px;
+    }
+}
+.main {
+    flex: 1 1 auto;
+}
+._container {
+    max-width: $container + px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+//================================= BUTTONS ==========================
+
+.large-btn {
+    @include a-sizes("width", 383, 340, 1);
+    display: flex;
+    align-items: center;
+    font-family: "DINLight";
+    transition: filter 0.3s linear;
+    &__text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        background-color: $forest;
+        @include a-sizes("min-height", 100, 70, 1);
+        flex: 1 1 70%;
+        transition: background-color 0.3s linear;
+    }
+    &__info {
+        flex: 1 1 30%;
+        background-color: $rose;
+        font-size: 12px;
+        line-height: 18px;
+        color: $dark;
+        display: flex;
+        align-items: center;
+        @include a-sizes("min-height", 100, 70, 1);
+    }
+
+    &__price {
+        font-family: "DINLight";
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;
+        color: $dark;
+    }
+    &__info-wrapper {
+        max-width: 62px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    &__from {
+        align-self: flex-start;
+    }
+    &__to {
+        align-self: flex-end;
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            & .large-btn__text {
+                background-color: $hg;
+            }
+        }
+        &:active .large-btn__text {
+            background-color: $green; 
+        }
+    }
+    &:active .large-btn__text {
+        background-color: $green;
+    }
+    @media (max-width: $phone) {
+        width: calc(100vw - 40px);
+    }
+}
+
+.transparent-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include a-sizes("width", 180, 140, 1);
+    @include a-sizes("height", 55, 45, 1);
+    border: 1px solid $white;
+    margin: 0 12px 10px 12px;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    z-index: 1;
+    transition: box-shadow 0.2s linear;
+    @media (any-hover: hover) {
+        &:hover {
+            box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.8);
+        }
+    }
+}
+//==================== TITLES ================================
+
+._h1-title {
+    font-family: "OpenSans-Light";
+    color: $white;
+    @include a-sizes("font-size", 70, 22, 0);
+}
+._h2-title {
+    font-family: "OpenSans-Regular";
+    @include a-sizes("font-size", 40, 20, 1);
+    color: $forest;
+    @include a-sizes("margin-bottom", 45, 15, 1);
+}
+._h3-title{
+    
+}

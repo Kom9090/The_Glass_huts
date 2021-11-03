@@ -7577,7 +7577,6 @@ window.addEventListener('DOMContentLoaded', function () {
         langOptions.forEach(function (item) {
           item.addEventListener("click", function () {
             item.prepend(select.firstElementChild);
-            console.log("ale");
             select.prepend(item.lastElementChild);
             select.nextElementSibling.classList.remove("_show-list");
             select.classList.remove("_selected");
@@ -7962,6 +7961,17 @@ if ((typeof exports === "undefined" ? "undefined" : _typeof(exports)) === 'objec
   polyfill();
 }
 
+;
+var langBtns = document.querySelectorAll(".select-lang__option");
+var alllang = ["en", "ic", "ge"];
+langBtns.forEach(function (langBtn) {
+  langBtn.addEventListener("click", changeUrlLang);
+
+  function changeUrlLang() {
+    var lang = langBtn.firstElementChild.dataset.lang;
+    location.href = window.location.pathname + "#" + lang;
+  }
+});
 ;
 
 function testWebP(callback) {
