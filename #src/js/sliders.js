@@ -8,7 +8,7 @@ new Swiper('.intro', {
         type: "progressbar"
     },
 
-
+    lazy: true,
     navigation: {
         nextEl: '.intro .intro__next',
         prevEl: '.intro .intro__prev',

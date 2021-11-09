@@ -986,7 +986,9 @@ button {
   width: 100%;
   position: relative;
   height: calc(500px + 200 * ((100vw - 280px) / 1640));
-  background: url("../image/star-sl.jpg") center/cover no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .intro__wrapper {
@@ -1028,26 +1030,6 @@ button {
   line-height: 28px;
   text-align: center;
   color: #ffffff;
-}
-
-.intro__slide2 {
-  background: url("../image/slide.jpg") center/cover no-repeat;
-}
-
-.intro__slide3 {
-  background: url("../image/two-slide.jpg") center/cover no-repeat;
-}
-
-.intro__slide4 {
-  background: url("../image/three-slide.jpg") center/cover no-repeat;
-}
-
-.intro__slide5 {
-  background: url("../image/four-slide.jpg") center/cover no-repeat;
-}
-
-.intro__slide6 {
-  background: url("../image/five-slide.jpg") center/cover no-repeat;
 }
 
 .swiper-container-horizontal > .intro__pagination.swiper-pagination-progressbar {
@@ -5235,18 +5217,6 @@ button {
     background-color: #efefef;
   }
 }
-
-.webp .intro__slide{ background: url(../image/star-sl.webp) center/cover no-repeat; }
-
-.webp .intro__slide2{ background: url(../image/slide.webp) center/cover no-repeat; }
-
-.webp .intro__slide3{ background: url(../image/two-slide.webp) center/cover no-repeat; }
-
-.webp .intro__slide4{ background: url(../image/three-slide.webp) center/cover no-repeat; }
-
-.webp .intro__slide5{ background: url(../image/four-slide.webp) center/cover no-repeat; }
-
-.webp .intro__slide6{ background: url(../image/five-slide.webp) center/cover no-repeat; }
 
 .webp .hut__inner{ background: url(../image/thehut.webp) bottom/cover no-repeat; }
 

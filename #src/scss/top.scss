@@ -3,7 +3,10 @@
         width: 100%;
         position: relative;
         @include a-sizes("height", 700, 500, 0);
-        background: url("../image/star-sl.jpg") center / cover no-repeat;
+        // background: url("../image/star-sl.jpg") center / cover no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
     &__wrapper {
         max-width: $container + px;
@@ -48,21 +51,21 @@
         }
     }
 
-    &__slide2 {
-        background: url("../image/slide.jpg") center / cover no-repeat;
-    }
-    &__slide3 {
-        background: url("../image/two-slide.jpg") center / cover no-repeat;
-    }
-    &__slide4 {
-        background: url("../image/three-slide.jpg") center / cover no-repeat;
-    }
-    &__slide5 {
-        background: url("../image/four-slide.jpg") center / cover no-repeat;
-    }
-    &__slide6 {
-        background: url("../image/five-slide.jpg") center / cover no-repeat;
-    }
+    // &__slide2 {
+    //     background: url("../image/slide.jpg") center / cover no-repeat;
+    // }
+    // &__slide3 {
+    //     background: url("../image/two-slide.jpg") center / cover no-repeat;
+    // }
+    // &__slide4 {
+    //     background: url("../image/three-slide.jpg") center / cover no-repeat;
+    // }
+    // &__slide5 {
+    //     background: url("../image/four-slide.jpg") center / cover no-repeat;
+    // }
+    // &__slide6 {
+    //     background: url("../image/five-slide.jpg") center / cover no-repeat;
+    // }
 }
 .swiper-container-horizontal>.intro__pagination.swiper-pagination-progressbar {
     top: calc(100% - 100px);
