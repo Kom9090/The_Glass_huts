@@ -323,7 +323,7 @@ input:focus {
 .outside-swiper__next,
 .outside-swiper__prev {
   top: calc(100% - 30px);
-  left: 5px;
+  left: 2px;
   position: absolute;
   cursor: pointer;
   padding: 5px 8px;
@@ -991,6 +991,10 @@ button {
   background-repeat: no-repeat;
 }
 
+.intro__slide_start {
+  background-image: url(../image/star-sl.jpg);
+}
+
 .intro__wrapper {
   max-width: 1408px;
   -webkit-box-sizing: border-box;
@@ -1203,7 +1207,7 @@ button {
 }
 
 .cabins-swiper__prev {
-  left: 15px;
+  left: 2px;
 }
 
 .cabins-swiper__next {
@@ -3658,7 +3662,7 @@ button {
   }
 
   .map-block._bottom-m {
-    padding-bottom: 30px;
+    padding-bottom: 60px;
   }
 
   #forest {
@@ -5217,6 +5221,8 @@ button {
     background-color: #efefef;
   }
 }
+
+.webp .intro__slide_start{ background-image: url(../image/star-sl.webp); }
 
 .webp .hut__inner{ background: url(../image/thehut.webp) bottom/cover no-repeat; }
 

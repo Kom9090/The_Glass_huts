@@ -7,6 +7,9 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        &_start {
+            background-image: url(../image/star-sl.jpg);
+        }
     }
     &__wrapper {
         max-width: $container + px;

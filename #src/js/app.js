@@ -151,6 +151,6 @@ if (document.querySelector(".contact-us__input")) {
 
 
 //=================================================================
-
-
+let bbbb = document.querySelectorAll("._h2-title");
+console.log(bbbb);
 
