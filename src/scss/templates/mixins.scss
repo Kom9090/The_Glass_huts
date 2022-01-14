@@ -1,0 +1,33 @@
+//fonts
+@mixin font($font_name, $file_name, $weight, $style) {
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+//sizes
+@mixin a-sizes($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+    $Width: $maxWidth - $minWidth;
+    @if $type==1 {
+        #{$property}: $startSize + px;
+        @media (max-width: #{$container + px}) {
+            #{$property}: calc(
+                #{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$container - $minWidth})
+            );
+        }
+    } @else if $type==2 {
+        #{$property}: $minSize + px;
+        @media (min-width: #{$minWidth + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$container - $minWidth}));
+        }
+        @media (min-width: #{$container + px}) {
+            #{$property}: $startSize + px; 
+        }
+    } @else {
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$Width}));
+    }
+}

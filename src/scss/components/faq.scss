@@ -1,0 +1,37 @@
+.faq {
+    margin-bottom: $off-section;
+    margin-top: $off * 2;
+    @media (min-width: $md) {
+        margin-top: $off * 5;
+    }
+    @media(min-width: $container + px) {
+        margin-bottom: 150px;
+    }
+  &__container {
+      @media (min-width: $lg) {
+          max-width: $cont;
+          margin: 0 auto;
+      }
+  }
+
+  &__wrapper {
+  }
+
+  &__title {
+      margin-bottom: $off * 2;
+      @media (min-width: $md) {
+        margin-bottom: $off * 3;
+      }
+  }
+
+  &__list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      @media (min-width: $md) {  
+           max-width: 774px;
+      }
+  }
+}
+
+

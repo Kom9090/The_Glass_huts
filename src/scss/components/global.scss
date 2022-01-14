@@ -1,0 +1,49 @@
+body {
+    min-width: $minWidth + px;
+    overflow-x: hidden;
+    position: relative;
+    font-family: $font-os;
+    &._lock {
+        overflow: hidden;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 70px;
+    &._lock {
+        @media (min-width: $sm) {
+            &::after {
+                content: "";
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background-color: $white;
+                opacity: 0.4;
+                z-index: 2;
+            } 
+        }
+    }
+    @media (min-width: $sm) {
+        padding-top: 85px;
+    }
+    @media (min-width: $lg) {
+        padding-top: 100px;
+    }
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+._container {
+    padding: 0 10px;
+    @media (min-width: $sm) {
+        padding: 0 15px;
+    }
+}
+

@@ -1,0 +1,72 @@
+.forest {
+
+    &__wrapper {
+        background-color: $lgreen;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: $md) {
+            display: block;    
+        }
+    }
+
+    &__info {
+        
+        padding: $off-section 10px;
+        @media (min-width: $xs) {
+            padding-left: $off * 4;
+            padding-right: $off * 4;
+        }
+        @media (min-width: $sm) {
+            padding-left: $off * 6;
+            padding-right: $off * 6;
+        }
+        @media(min-width: $md) {
+            padding-right: 7%;
+            padding-left: 7%;
+        }
+        @media(min-width: $xxl) {
+            padding: 150px 161px;
+        }
+        &.forest__container {
+            @media (min-width: $xxl) {
+                max-width: $container + px;
+                margin: 0 auto;
+            }
+        }
+    }
+    
+    
+
+    &__title {
+        margin-bottom: $off * 2;
+        @media (min-width: $md) {
+            margin-bottom: $off * 5;
+        }
+    }
+
+    &__text {
+        height: 210px;
+        margin-bottom: $off;
+        @media (min-width: $md) {
+            @include a-sizes("max-width", 465, 180, 1);
+            margin-bottom: $off * 2;
+        }
+    }
+
+    &__map-block {
+        order: 2;
+        height: 450px;
+        @media (min-width: $md) {
+            float: left;
+            width: 50%;
+            height: calc(504.08px + 148 * ((100vw - 769px) / (1400 - 769)));
+            margin-right: 7%;
+            margin-bottom: 4%;
+            overflow: hidden;
+        }
+        @media(min-width: $xxl) {
+            height: 656px;
+            margin-right: 110px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.privacy {
+    &__links {
+        font-family: $font-din;
+        font-weight: 300;
+        font-size: 0.875rem;
+        line-height: 2;
+        text-transform: uppercase;
+        margin: 0 15px;
+        transition: opacity 0.3s linear;
+        @media (min-width: $md) {
+            margin: 0;
+        }
+        @media (min-width: $lg) {
+            margin-left: $off * 2;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+}

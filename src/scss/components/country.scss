@@ -1,0 +1,36 @@
+.country {
+
+  &__slogan {
+    margin-bottom: $off * 5;
+    @media (min-width: $md) {
+      flex: 0 0 50%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+
+  &__slogan-text {
+    @media (min-width: $md) {
+      flex: 0 0 85%;
+    }
+    @media (min-width: $lg) {
+      margin-right: $off * 3;
+    }
+  }
+
+  &__map {
+    @media (min-width: $md) {
+      flex: 0 0 50%;
+    }
+  }
+  
+  &__map-img {
+    display: block;
+    max-width: 90%;
+    margin: 0 auto;
+    @media (min-width: $lg) {
+      max-width: 80%;
+    }
+  }
+}

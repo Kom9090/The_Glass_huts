@@ -1,0 +1,8 @@
+.logo {
+    &__img {
+        width: 55px;
+        @media (min-width: $sm) {
+            width: 65px;
+        }
+    }
+}

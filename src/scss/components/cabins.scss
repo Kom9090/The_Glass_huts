@@ -1,0 +1,75 @@
+.cabins {
+
+    &__container {
+        @media (min-width: $xxl) {
+            max-width: $container + px;
+            margin: 0 auto;
+        }
+        @media (min-width: $md) {
+            margin: 0;
+        }
+    }
+
+    &__wrapper {
+        padding-top: $off * 4;
+        
+        @media (min-width: $xs) {
+            padding: $off * 4 $off * 3 0 $off * 3;
+        }
+        @media (min-width: $sm) {
+            padding: $off * 4 $off * 5 0 $off * 5;
+        }
+        @media (min-width: $md) {
+            padding: 0 0 0 5%;
+            margin-right: -15px;
+        }
+        @media(min-width: $xxl) {
+            padding-left: 146px;
+        }
+
+    }
+
+    &__bg {
+        display: none;
+        @media (min-width: $md) {
+            display: block;
+            float: right;
+            @include a-sizes("width", 697, 180, 1);
+            height: calc(352px + 89 * ((100vw - 769px) / (1920 - 769)));
+            background: url("../images/the-bed-features.jpg") 0 0 / cover no-repeat;
+            margin: 0 0 4% 5%;
+            overflow: hidden;
+        }
+    }
+
+    &__title {
+        margin-bottom: $off * 2;
+        @media (min-width: $md) {
+            margin-bottom: $off * 5;
+            padding-top: calc(10px + 75 * ((100vw - 769px) / (1920 - 769)));
+        }
+    }
+
+    &__text {
+        height: 210px;
+        margin-bottom: $off;
+        @media (min-width: $md) {
+            @include a-sizes("max-width", 465, 180, 1);
+            margin-bottom: $off * 2;
+        }
+        &._all-text {
+            @media(min-width: $md) {
+                margin-right: calc(5% + 15px);
+            }
+        }
+    }
+
+    &__swiper {
+        margin: $off-section 0;
+        @media(min-width: $container + px) {
+            margin: 150px 0 110px 0;
+        }
+    }
+
+}
+

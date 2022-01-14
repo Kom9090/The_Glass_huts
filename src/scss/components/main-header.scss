@@ -1,0 +1,108 @@
+.main-header {
+  margin-bottom: $off-section;
+  @media(min-width: $container + px) {
+    margin-bottom: 150px;
+  }
+  &__wrapper {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $off * 5 0;
+    position: relative;
+    @media (min-width: $md) {
+      min-height: 350px;
+      padding: $off * 7 0;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;  
+    }
+    &_hut {
+      background: url("../images/top-hut-bg.jpg") bottom/cover no-repeat;
+      &::after {
+        background-color: rgba(#3333, 0.7);  
+      }
+    }
+    &_area {
+      background: url("../images/areabg.jpg") bottom/cover no-repeat;
+      &::after {
+        background-color: rgba(#3333, 0.5);  
+      }
+    }
+    &_about-us {
+      background: url("../images/aboutus.jpg") bottom/cover no-repeat;
+      &::after {
+        background-color: rgba(#3333, 0.6);  
+      }
+    }
+    &_booking {
+      background: url("../images/bookingbg.jpg") bottom/cover no-repeat;
+      &::after {
+        background-color: rgba(#3333, 0.6);  
+      }
+    }
+  }
+
+  &__title {
+    z-index: 1;
+    text-align: center;
+    margin-bottom: $off * 2;
+    @media (max-width: $sm) {
+      font-size: 40px;
+    }
+  }
+
+  &__btn-block {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: auto auto 0 auto;
+  }
+
+  &__address {
+    flex: 0 0 100%;
+    color: $white;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: $off * 2;
+    transition: opacity 0.3s linear;
+    @media (any-hover: hover) {
+      &:hover {
+          opacity: 0.7;
+      }
+    }
+    @media (min-width: $md) {
+      margin-bottom: $off * 5;
+    }
+  }
+
+  &__transparent-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    min-height: 55px; 
+    border: 1px solid $white;
+    margin: 0 $off $off $off;
+    font-size: 0.875rem;
+    line-height: 2;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $white;
+    transition: box-shadow 0.3s linear;
+    @media (any-hover: hover) {
+        &:hover {
+            box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.8);
+        }
+    }
+  }
+}
+

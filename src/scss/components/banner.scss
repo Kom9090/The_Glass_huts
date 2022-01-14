@@ -1,0 +1,16 @@
+.banner {
+
+    &__slider {
+        height: 180px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__slide {
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; 
+    }
+}

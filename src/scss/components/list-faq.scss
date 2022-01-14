@@ -1,0 +1,81 @@
+.list-faq {
+
+  &__item {
+    width: 100%;
+  }
+
+  &__title {
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      width: 100%;
+      height: 60px;
+      border: 1px solid $forest;
+      padding: 5px 24px;
+      cursor: pointer;
+      transition: background-color 0.3s linear;
+      background-color: $white;
+      @media (any-hover: hover) {
+          &:hover {
+              background-color: $lgreen;
+          }
+      } 
+      &._close-spr {
+          border: 0.7px solid transparent;
+          background-color: $lgreen;
+          @media (any-hover: hover) {
+            &:hover {
+                & .list-faq__arrow {
+                    background-color: $hg;
+                }
+            }
+          }
+      } 
+  }
+
+  &__text {
+      font-size: 1rem;
+      font-size: 1.125rem;
+      line-height: 1;
+      color: $dark;
+      text-transform: uppercase;
+      margin-right: 10px;
+      @media (min-width: $sm) {  
+          font-size: 1.125rem;
+      }
+  }
+
+  &__arrow {
+      width: 34px;
+      height: 34px;
+      background-color: $lgreen;
+      transition: background-color 0.3s linear;
+      &::after {
+        top: 12px;
+        left: 14px; 
+      }
+      &::before {
+        top: 12px;
+        left: 20px;    
+      }
+  }
+
+  &__content {
+  }
+
+  &__text-content {
+      padding: 24px;
+      background-color: $lgreen;
+      font-size: 0.875rem;
+      line-height: 1.3;
+  }
+}
+
+._close-spr .list-faq__arrow {
+  &::before {
+      transform: rotate(135deg);
+  }
+  &::after {
+      transform: rotate(-135deg);
+  }
+}

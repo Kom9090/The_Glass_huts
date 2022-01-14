@@ -1,0 +1,86 @@
+@import "./templates/minireset";
+@import "./templates/vars.scss";
+@import "./templates/mixins.scss";
+@import "./templates/patterns.scss";
+@import "./components/global";
+@import "./components/fonts";
+@import "./components/tooltip";
+// Patterns ===========================
+@import "./components/scrollbar";
+@import "./components/main-button";
+@import "./components/lg-button";
+@import "./components/tabs-btn";
+@import "./components/arrow-y";
+@import "./components/titles";
+@import "./components/swiper-controls";
+@import "./components/link-cover";
+@import "./components/slogan-title";
+@import "./components/form";
+@import "./components/checkbox";
+@import "./components/sending";
+// Header ==============================
+@import "./components/header";
+@import "./components/burger";
+@import "./components/logo";
+@import "./components/menu";
+@import "./components/select-lang";
+// Footer ==============================
+@import "./components/footer";
+@import "./components/connect";
+@import "./components/pay";
+@import "./components/privacy";
+// Top =================================
+@import "./components/top";
+@import "./components/intro";
+// Cabins ===============================
+@import "./components/cabins";
+@import "./components/text-content";
+@import "./components/cabins-swiper";
+// Forest ===============================
+@import "./components/forest";
+@import "./components/map-block";
+@import "./components/marker";
+// Fecilities ===========================
+@import "./components/fecilities";
+@import "./components/list-unit";
+// About-section =========================
+@import "./components/about-section";
+// Contact ===============================
+@import "./components/contact-section";
+@import "./components/address";
+@import "./components/banner";
+// Popup =================================
+@import "./components/popup";
+@import "./components/book-form";
+@import "./components/search-btn";
+@import "./components/quantity";
+@import "./components/calendar";
+// main-header ===========================
+@import "./components/main-header";
+@import "./components/address-link";
+// slider template ========================
+@import "./components/slider-section";
+@import "./components/info-block";
+// Area ==================================
+@import "./components/country";
+@import "./components/activities";
+@import "./components/area-map";
+// About Us ==============================
+@import "./components/gallery";
+@import "./components/postscript";
+@import "./components/input-block";
+@import "./components/form-about-us";
+// FAQ ====================================
+@import "./components/faq";
+@import "./components/list-faq";
+// Booking ================================
+@import "./components/booking";
+@import "./components/aside";
+@import "./components/supplement";
+@import "./components/services";
+// Confirm ================================
+@import "./components/confirm";
+@import "./components/pay-form";
+@import "./components/select-code";
+@import "./components/select-country";
+@import "./components/select-card";

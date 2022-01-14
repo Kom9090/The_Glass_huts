@@ -1,45 +1,58 @@
 {
-  "name": "gulppro",
+  "name": "aircraft_carrier",
   "version": "1.0.0",
   "description": "gulp build",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Kom",
+  "browserslist": [
+    "last 3 version"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "author": "Alexandr Kom",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
-    "browser-sync": "^2.27.5",
+    "@babel/core": "^7.16.7",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/preset-env": "^7.16.4",
+    "browser-sync": "^2.27.7",
     "del": "^6.0.0",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
-    "gulp-clean-css": "^4.3.0",
+    "gulp-csso": "^4.0.1",
     "gulp-file-include": "^2.3.0",
     "gulp-fonter": "^0.3.0",
     "gulp-group-css-media-queries": "^1.2.2",
-    "gulp-imagemin": "^7.1.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-pug": "^5.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.0.0",
-    "gulp-svg-sprite": "^1.5.0",
-    "gulp-ttf2woff": "^1.1.1",
+    "gulp-shorthand": "^1.1.0",
     "gulp-ttf2woff2": "^4.0.1",
-    "gulp-uglify-es": "^3.0.0",
-    "gulp-webp": "^4.0.1",
-    "gulp-webp-html": "^1.0.2",
-    "gulp-webpcss": "^1.1.1",
-    "sass": "^1.37.5",
-    "webp-converter": "^2.2.3"
+    "gulp-uglify": "^3.0.2",
+    "gulp-webp-css": "^1.1.0",
+    "sass": "^1.43.4",
+    "webpack": "^5.64.2",
+    "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.0",
     "aos": "^2.3.4",
-    "fslightbox": "^3.3.0-2",
-    "inputmask": "^5.0.6",
+    "fslightbox": "^3.3.1",
     "leaflet": "^1.7.1",
-    "leaflet-gesture-handling": "^1.2.1",
-    "swiper": "^6.8.2",
+    "leaflet-gesture-handling": "^1.2.2",
+    "normalize.css": "^8.0.1",
+    "smoothscroll-polyfill": "^0.4.4",
+    "swiper": "^7.3.3",
     "vivus": "^0.4.6"
   }
 }

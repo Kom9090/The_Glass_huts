@@ -1,0 +1,18 @@
+.list-unit {
+
+    &__img {
+        width: 8.8vw;
+        margin-bottom: $off;
+        @media(min-width: $md) {
+            width: 70px;
+            margin-bottom: $off * 2;
+        }
+    }
+
+    &__name {
+        text-align: center;
+        max-width: 145px;
+        @include a-sizes("font-size", 18, 14, 1);
+        line-height: 1.55;
+    }
+}

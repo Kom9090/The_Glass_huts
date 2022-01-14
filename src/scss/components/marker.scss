@@ -1,0 +1,56 @@
+@keyframes waves {
+    0% {
+        transform: scale(0);
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(6);
+    }
+}
+.marker {
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "WE ARE HERE";
+        width: 76px;
+        height: 76px;
+        background-color: $white;
+        color: $dark;
+        font-size: 12px;
+        font-family: $font-din;
+        font-weight: 300;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        top: calc(50% - 76px / 2);
+        left: calc(50% - 76px / 2);
+    }
+    &__waves {
+        position: absolute;
+        content: "";
+        width: calc(36px + 60 * ((100vw - 280px) / (1920 - 280)));
+        height: calc(36px + 60 * ((100vw - 280px) / (1920 - 280)));
+        top: calc(50% - (36px + 60 * ((100vw - 280px) / (1920 - 280))) / 2);
+        left: calc(50% - (36px + 60 * ((100vw - 280px) / (1920 - 280))) / 2);
+        background-color: $white;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: waves 2s cubic-bezier(0.9, 0.24, 0.62, 0.79) infinite;
+        &:nth-of-type(1) {
+            animation-delay: 0;
+        }
+        &:nth-of-type(2) {
+            animation-delay: 0.3s;
+        }
+        &:nth-of-type(3) {
+            animation-delay: 0.5s;
+        }
+        &_hide {
+            animation: none;
+        }
+    }
+
+}

@@ -1,0 +1,14 @@
+{
+    "extends": "airbnb-base/legacy",
+    "parser": "@babel/eslint-parser",
+    
+    "env": {
+        "browser": true,
+        "jquery": true,
+    },
+    
+    "rules":{
+        "linebreak-style": 0
+    }
+
+}

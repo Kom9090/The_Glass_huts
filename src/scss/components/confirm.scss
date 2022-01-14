@@ -1,0 +1,38 @@
+.confirm {
+  margin-top: $off * 2;
+    @media (min-width: $md) {
+        margin-top: $off * 5;
+    }
+  &__container {
+      @media (min-width: $xxl) {
+          max-width: $container + px;
+          margin: 0 auto;
+      }
+  }
+
+  &__wrapper {
+      @media (min-width: $lg) {
+        display: flex;
+        justify-content: space-between;
+      }
+      @media (min-width: $xxl) {
+        margin-left: 144px;
+      }
+  }
+
+  &__form {
+      margin-bottom: $off-section;
+      width: 100%;
+      @media (min-width: $sm) {
+        max-width: 660px;
+      }
+      @media (min-width: $xs) {
+        margin: 0 auto $off-section auto;
+      }
+      @media (min-width: $lg) {
+        flex-shrink: 1;
+        margin: 0  $off * 3 $off-section 0;
+      }
+      
+  }
+}

@@ -1,0 +1,68 @@
+.large-btn {
+    width: calc(100vw - 40px);
+    display: flex;
+    align-items: center;
+    font-family: $font-din;
+    font-weight: 300;
+    transition: filter 0.3s linear;
+    &__text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        background-color: $forest;
+        @include a-sizes("height", 100, 80, 1);
+        flex: 1 1 70%;
+        transition: background-color 0.3s linear;
+    }
+    &__info {
+        flex: 1 1 30%;
+        background-color: $lgreen;
+        font-size: 0.85rem;
+        line-height: 1.5em;
+        color: $dark;
+        display: flex;
+        align-items: center;
+        @include a-sizes("height", 100, 80, 1);
+    }
+
+    &__price {
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.4em;
+        color: $dark;
+    }
+    &__info-wrapper {
+        max-width: 62px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    &__from {
+        align-self: flex-start;
+    }
+    &__to {
+        align-self: flex-end;
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            & .large-btn__text {
+                background-color: $hg;
+            }
+        }
+        &:active .large-btn__text {
+            background-color: $green; 
+        }
+    }
+    &:active .large-btn__text {
+        background-color: $green;
+    }
+    @media (min-width: $xs) {
+        width: 383px;
+    }
+}

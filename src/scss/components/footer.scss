@@ -1,0 +1,74 @@
+.footer {
+    background-color: $forest;
+    color: $white;
+    &__container {
+        @media (min-width: $lg) {
+            max-width: $cont;
+            margin: 0 auto;
+        }
+    }
+    &__body {
+        padding: 9.2% 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media (min-width: $md) {
+            flex-flow: row wrap;
+            align-items: flex-start;
+        }
+    }
+    &__block {
+        width: 100%;
+        @media (min-width: $md) {
+            flex: 0 0 50%;
+        }
+    }
+    &__connect {
+        @media (min-width: $md) {
+            max-width: 430px;
+        }
+        
+    }
+    &__pay {
+        margin: $off * 2 auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 400px;
+        flex-wrap: wrap;
+        @media (min-width: $md) {
+            max-width: 300px;
+            margin: 0 0 0 auto;
+            justify-content: space-between;
+        }
+    }
+    &__privacy {
+        margin: $off * 2 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        @media (min-width: $md) {
+            flex-direction: column;
+            align-items: flex-end;
+            margin-top: 0;
+        }
+        @media (min-width: $lg) {
+            flex-direction: row;
+            justify-content: end;
+            align-items: center;
+            margin-bottom: $off * 5;
+        }
+    }
+    &__copyright {
+        font-weight: 300;
+        font-size: 0.875rem;
+        line-height: 1.875;
+        color: $grey;
+        opacity: 0.7;
+        margin-top: $off * 2;
+        @media (min-width: $lg) {
+            margin-top: $off * 7;
+        }
+    }
+}

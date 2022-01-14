@@ -1,0 +1,58 @@
+.select-country {
+  width: 100%;
+  position: relative;
+
+  &__menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    max-height: 150px;
+    overflow-y: auto;
+    text-overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s linear;
+    width: 100%;
+    background-color: $white;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+    z-index: 200;  
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+      width: 8px;
+    }  
+    &::-webkit-scrollbar-track {
+      background-color: $lgreen;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $dark;
+    }
+    &._show-list {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      top: 55px;
+    }
+  }
+
+  &__option {
+    width: 100%;
+    padding: 7px 24px;  
+    cursor: pointer; 
+    color: $dark;
+    line-height: 1.8; 
+    transition: background-color 0.3s linear;
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: $grey;
+        }
+    } 
+    &._hide {
+      display: none;
+    }   
+  }
+}
+

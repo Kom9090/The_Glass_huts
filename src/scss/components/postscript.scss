@@ -1,0 +1,21 @@
+.postscript {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: $off-section;
+    @media(min-width: $container + px) {
+      margin-top: 150px;
+    }
+  &__text {
+        font-family: $font-handlee;
+        font-size: 20px;
+        line-height: 24px;
+        color: #5B6460;
+        margin-bottom: 15px;
+        text-align: center;
+  }
+
+  &__img {
+  }
+}

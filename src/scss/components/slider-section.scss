@@ -1,0 +1,98 @@
+.slider-section {
+  margin-bottom: $off-section;
+  @media(min-width: $container + px) {
+    margin-bottom: 150px;
+  }
+
+  &__container {
+    @media (min-width: $lg) {
+      max-width: $cont;
+      margin: 0 auto;
+    }
+  }
+
+  &__wrapper {
+    @media (min-width: $sm) {
+      padding: 0 $off * 2;
+    }
+    @media (min-width: $md) {
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      &_reverse {
+        flex-direction: row-reverse;
+        & .slider-section__info-block {
+          @media (min-width: $md) {
+            padding-right: $off * 2;
+          }
+          @media (min-width: $lg) {
+            padding-right: $off * 3;
+          }
+          @media (min-width: $xl) {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__info-block {
+    @media (min-width: $md) {
+      flex: 0 0 45%;
+      padding-left: $off * 2;
+    }
+    @media (min-width: $lg) {
+      flex: 0 0 44%;
+      padding-top: $off * 5;
+      padding-left: $off * 3;
+    }
+    @media (min-width: $xl) {
+      flex: 0 0 38%;
+      padding-left: 0;
+    }
+  }
+
+  &__slider {
+    
+    margin: 0 0 0 auto;
+    min-width: 0px;
+    @media (min-width: $md) {
+      flex: 0 0 50%;
+    }
+    &_reverse {
+      margin: 0 auto 0 0;
+    }
+  }
+
+  &__slide {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding-bottom: 87%;
+  }
+
+  &__img {
+    position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+  }
+
+  &__nav-container {
+    position: relative;
+    height: 40px;
+  }
+
+  &__prev {
+    bottom: 3px;
+    left: 0;
+  }
+
+  &__next {
+    bottom: 3px;
+    left: 63px;
+  }
+}
+

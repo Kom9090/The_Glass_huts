@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Glass huts</title> 
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+    <link rel="manifest" href="./favicons/site.webmanifest">
+    <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#808e88">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#333333">
+    <!-- styles -->
+    <link rel="stylesheet" href="libs.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="margin">
+    @@include("html/header.html")
+    <div class="content">
+        <main class="main">
+          <header class="main__header main-header">
+            <div class="main-header__wrapper main-header__wrapper_booking">
+              <h1 class="main-header__title _h1-title">Booking</h1>
+              <div class="main-header__btn-block">
+                <a class="main-header__address address-link _tt-bottom" href="https://goo.gl/maps/w3r2SvdYS8xqv1AV8" target="blank" title="See in google maps">
+                  <img class="address-link__img" src="./images/mark.svg" alt="location icon" width="10" height="15">
+                  <span class="address-link__text">Hafnarfjörður, Iceland</span> 
+                </a>
+                <a class="main-header__transparent-btn" href="faq.html" target="blank">Read FAQ</a>
+              </div>
+            </div>
+          </header> 
+          <div class="booking">
+              <div class="booking__container _container">
+                  <div class="booking__wrapper">
+                      <aside class="booking__aside aside">
+                          <div class="aside__intro">
+                              <span class="aside__intro-price">3,200 &euro;</span> / night
+                          </div>
+                          <a class="aside__search popup-link" href="#calendar">
+                              <div class="aside__search-block">
+                                  <span class="aside__search-label">Check in</span>
+                                  <span class="aside__search-output">Add dates</span>
+                              </div>
+                              <div class="aside__search-block">
+                                  <span class="aside__search-label">Check out</span>
+                                  <span class="aside__search-output">Add dates</span>
+                              </div>
+                              <div class="aside__search-block">
+                                  <span class="aside__search-label">Guests</span>
+                                  <span class="aside__search-output aside__search-output_quantity">
+                                    <span class="quantity__icon-minus"></span>
+                                    <span class="aside__quantity-output">1</span>
+                                    <span class="quantity__icon-plus"></span>
+                                  </span>
+                              </div>
+                            </a>
+                            <form class="aside__form" action="get">
+                                <input type="hidden" name="d" required>
+                                <input type="hidden" name="hg"  required>
+                                <button class="aside__btn main-button" type="submit">Book</button> 
+                            </form> 
+                          <div class="aside__info">
+                              <article class="aside__info-item">
+                                  <span class="aside__info-text _hat"><span class="aside__main-price">3 200</span>&euro; x <span class="aside__factor">2</span> nights</span>
+                                  <span class="aside__info-price">6 400&euro;</span>
+                              </article>
+                          </div>
+                          <hr class="aside__hr">
+                          <div class="aside__total">
+                                <span class="aside__total-text">Total</span>
+                                <span class="aside__total-price">7,000&euro;</span>
+                          </div>
+                          <form class="aside__discount">
+                              <label class="input-block aside__label-coupon" for="coupon" >
+                                  <span class="input-block__placeholder">Coupon Code</span>
+                                  <input class="aside__input-coupon input-block__input input" name="coupon" id="coupon" type="text" minlength="6" maxlength="6" required>
+                              </label>
+                              <button class="aside__coupon-btn main-button" type="submit">apply</button>
+                          </form>
+                      </aside>
+                      <div class="booking__supplement supplement">
+                          <div class="supplement__item">
+                              <h3 class="supplement__title _h3-title">Choose Additional Services</h3>
+                              <ul class="supplement__services" data-spollers>
+                                  <li class="services__list-item" >
+                                        <div class="services__cart">
+                                          <label class="services__btn-main">
+                                              <input type="radio" name="brek" class="checkbox _brekf">
+                                              <span class="checkbox__icon" aria-hidden="true"></span>
+                                              <span class="services__text">
+                                                  <span class="services__name">Fresh Breakfast for one </span>
+                                                  <span class="services__price">400&euro;</span>
+                                              </span>
+                                          </label>
+                                                                               
+                                        </div>
+                                        <button class="services__btn" tabindex="-1" type="button" aria-label="open spoller" data-spoller>
+                                          <span class="services__arrow arrow-y" aria-hidden="true"></span>
+                                        </button>
+                                        <div class="services__content">
+                                          <p class="services__text-content">
+                                              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                              Tempora quae provident excepturi molestiae est facilis corporis asperiores ab cumque optio.
+                                          </p>
+                                          
+                                        </div>
+                                  </li>
+                                  <li class="services__list-item" >
+                                      <div class="services__cart">
+                                          <label class="services__btn-main">
+                                              <input type="radio" name="brek" class="checkbox _brekf">
+                                              <span class="checkbox__icon" aria-hidden="true"></span>
+                                              <span class="services__text">
+                                                  <span class="services__name">Fresh Breakfast for two</span>
+                                                  <span class="services__price">500&euro;</span>
+                                              </span>
+                                          </label>                                     
+                                      </div>
+                                      <button class="services__btn" tabindex="-1" type="button" aria-label="open spoller" data-spoller>
+                                          <span class="services__arrow arrow-y" aria-hidden="true"></span>
+                                        </button>
+                                      <div class="services__content">
+                                          <p class="services__text-content">
+                                              Bread, Coffee, milk, juice, and a selection of spreads + toppings.
+                                          </p>
+                                          
+                                      </div>
+                                  </li>
+                                  <li class="services__list-item" >
+                                      <div class="services__cart">
+                                          <label class="services__btn-main">
+                                              <input type="radio" name="dinn" class="checkbox _dinner">
+                                              <span class="checkbox__icon" aria-hidden="true"></span>
+                                              <span class="services__text">
+                                                  <span class="services__name">Classic Dinner for one</span>
+                                                  <span class="services__price">600&euro;</span>
+                                              </span>
+                                          </label>                                     
+                                      </div>
+                                      <button class="services__btn" tabindex="-1" type="button" aria-label="open spoller" data-spoller>
+                                          <span class="services__arrow arrow-y" aria-hidden="true"></span>
+                                      </button>
+                                      <div class="services__content">
+                                          <p class="services__text-content">
+                                              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                              Tempora quae provident excepturi molestiae est facilis corporis asperiores ab cumque optio.
+                                          </p>
+                                          
+                                      </div>
+                                  </li>
+                                  <li class="services__list-item" >
+                                      <div class="services__cart">
+                                          <label class="services__btn-main">
+                                              <input type="radio" name="dinn" class="checkbox _dinner">
+                                              <span class="checkbox__icon" aria-hidden="true"></span>
+                                              <span class="services__text">
+                                                  <span class="services__name">Classic Dinner for two</span>
+                                                  <span class="services__price">800&euro;</span>
+                                              </span>
+                                          </label>                                     
+                                      </div>
+                                      <button class="services__btn" tabindex="-1" type="button" aria-label="open spoller" data-spoller>
+                                          <span class="services__arrow arrow-y" aria-hidden="true"></span>
+                                        </button>
+                                      <div class="services__content">
+                                          <p class="services__text-content">
+                                              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                              Tempora quae provident excepturi molestiae est facilis corporis asperiores ab cumque optio.
+                                          </p>
+                                          
+                                      </div>
+                                  </li>
+                                  <li class="services__list-item" >
+                                      <div class="services__cart">
+                                          <label class="services__btn-main">
+                                              <input type="checkbox" class="checkbox _car" data-group="car">
+                                              <span class="checkbox__icon" aria-hidden="true"></span>
+                                              <span class="services__text">
+                                                  <span class="services__name">Electric Car Charge</span>
+                                                  <span class="services__price">800&euro;</span>
+                                              </span>
+                                          </label>                                     
+                                      </div>
+                                      <button class="services__btn" tabindex="-1" type="button" aria-label="open spoller" data-spoller>
+                                          <span class="services__arrow arrow-y" aria-hidden="true"></span>
+                                        </button>
+                                      <div class="services__content">
+                                          <p class="services__text-content">
+                                              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                              Tempora quae provident excepturi molestiae est facilis corporis asperiores ab cumque optio.
+                                          </p>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div> 
+                          <div class="supplement__item">
+                                <h3 class="services__title _h3-title">Hut rules</h3>
+                                <p class="services__info">Check-in:  2:00 PM - 11:00 PM</p>
+                                <p class="services__info">Checkout: 11:00 AM</p>
+                                <p class="services__info">Not suitable for children and infants</p>
+                                <p class="services__info">No smoking</p>
+                                <p class="services__info">No pets</p>
+                          </div>
+                          <div class="supplement__item">
+                                <h3 class="services__title _h3-title">Cancellation policy</h3>
+                                <p class="services__info">Free cancellation until 1:00 PM on Mar 27</p>
+                                <p class="services__info">After that, cancel before 2:00 PM on Apr 1 and get a 50% refund, minus the first night and service fee.</p>
+                          </div>
+                          <div class="supplement__item">
+                                <h3 class="services__title _h3-title">Important Information</h3>
+                                <p class="services__info">You need to hike a steep hill to arrive at the treehouses, it takes approx 20-30 minutes on a trail with stairs and uneven ground.</p>
+                          </div> 
+                      </div>
+                      
+                  </div>
+              </div>
+          </div>
+        </main>
+        @@include("html/footer.html")
+    </div>
+    @@include("html/popup.html")
+    <script src="main.js"></script>
+</body>
+</html>

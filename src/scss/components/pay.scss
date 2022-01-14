@@ -1,0 +1,23 @@
+.pay {
+    &__links {
+       margin-bottom: $off;
+       width: 50px;
+       height: 50px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       @media (any-hover: hover) {
+        &:hover {
+            & .pay__logo {
+                filter: drop-shadow(1px 1px 10px rgba(0, 255, 128, 0.55));
+            }
+            
+        }
+    }
+    }
+
+    &__logo {
+        transition: filter 0.3s linear;
+        width: auto;
+    }
+}

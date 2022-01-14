@@ -1,0 +1,67 @@
+.address {
+
+    &__title {
+        margin-bottom: $off * 2;
+        @media (min-width: $md) {
+            margin-bottom: $off * 5;
+        }
+    }
+
+    &__group {
+        font-weight: 300;
+        line-height: 1.875;
+        font-style: normal;
+    }
+
+    &__text {
+        margin-bottom: $off;
+        @media (min-width: $md) {
+            margin-bottom: $off * 2;
+        }
+    }
+
+    &__link {
+        display: block;
+    }
+
+    &__social {
+        margin-top: $off * 2;
+        display: flex;
+        align-items: center;
+        @media (min-width: $md) {
+            margin-top: $off * 5;
+        }
+    }
+
+    &__social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: $forest;
+        border-radius: 50%;
+        transition: background-color 0.3s linear;
+        &:not(:last-child) {
+            margin-right: $off * 2;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $hg;
+            }
+            &:active {
+                background-color: $green;
+            }
+        }
+        &:active {
+            background-color: $green;
+        }
+        @media (min-width: $md) {
+            width: 50px;
+            height: 50px;
+            &:not(:last-child) {
+                margin-right: $off * 4;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.supplement {
+  width: 100%;
+  @media (min-width: $sm) {
+    max-width: 660px;
+  }
+  &__item {
+    margin-bottom: $off * 3;
+    @media (min-width: $md) {
+      margin-bottom: $off * 5;
+    }
+    @media (min-width: $lg) {
+      margin-bottom: $off * 7;
+    }
+  }
+
+  &__title {
+      padding-bottom: 25px;
+      border-bottom: 1px solid $forest;
+      font-weight: 400;
+  }
+
+  &__services {
+    margin-top: 24px;
+  }
+}
+
+

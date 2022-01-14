@@ -1,0 +1,8 @@
+.form-about-us {
+  &__btn {
+    flex: 1 1 100%;
+    @media (min-width: $sm) {
+      width: 200px;
+    }
+  }
+}

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Glass huts</title> 
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+    <link rel="manifest" href="./favicons/site.webmanifest">
+    <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#808e88">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#333333">
+    <!-- styles -->
+    <link rel="stylesheet" href="libs.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="margin">
+    @@include("html/header.html")
+    <div class="content">
+        <main class="main">
+            <section class="confirm">
+                <div class="confirm__container _container">
+                    <div class="confirm__wrapper">
+                      <form action="GET" class="confirm__form pay-form">
+                          <a class="pay-form__back" href="booking.html">Confirm & Pay</a>
+                          <fieldset class="pay-form__field">
+                              <legend class="pay-form__legend _h3-title">Personal Information</legend>
+                              <div class="pay-form__inputs form">
+                                <label class="form-about-us__input-block input-block input-block_half" for="firstName">
+                                  <span class="input-block__placeholder">First Name</span>
+                                  <input class="input-block__input input" name="firstName" id="firstName" type="text" required>
+                                </label>
+                                <label class="form-about-us__input-block input-block input-block_half" for="lastName" >
+                                  <span class="input-block__placeholder">Last Name</span>
+                                  <input class="input-block__input input" name="lastName" id="lastName" type="text"  required>
+                                </label>
+                                <label class="form-about-us__input-block input-block input-block_half" for="email" >
+                                  <span class="input-block__placeholder">Email</span>
+                                  <input class="input-block__input input" name="email" id="email" type="email"  required>
+                                </label>
+                                <div class="form-about-us__input-block input-block input-block_half">
+                                  <div class="select-code">
+                                      <button class="select-code__btn select" type="button" aria-label="select phone code">
+                                        <img class="select-code__img" src="./images/iceland.svg" width="25px" alt="iceland flag" id="iceland">
+                                      </button>
+                                      <ul class="select-code__menu option-list">
+                                          <li class="select-code__option">
+                                            <img class="select-code__img" src="./images/united-kingdom.svg" width="25px" alt="united flag" id="united">
+                                          </li>
+                                          <li class="select-code__option">
+                                            <img class="select-code__img" src="./images/germany.svg" width="25px" alt="germany flag" id="germany">
+                                          </li>
+                                      </ul>
+                                  </div>
+                                  <label class="form-about-us__input-block input-block input-block_code" for="phone" >
+                                    <span class="input-block__placeholder">Phone number</span>
+                                    <input class="input-block__input input" name="phone" id="phone" type="tel" required>
+                                  </label>
+                                </div>
+                                <label class="form-about-us__input-block input-block input-block_half" for="address" >
+                                  <span class="input-block__placeholder">Address</span>
+                                  <input class="input-block__input input" name="address" id="address" type="text"  minlength="8" maxlength="64" required>
+                                </label>
+                                <label class="form-about-us__input-block input-block input-block_half" for="postal" >
+                                  <span class="input-block__placeholder">Postal code</span>
+                                  <input class="input-block__input input" name="postal" id="postal" type="text" minlength="3" maxlength="9" required>
+                                </label>
+                                <label class="form-about-us__input-block input-block input-block_half" for="city" >
+                                  <span class="input-block__placeholder">City</span>
+                                  <input class="input-block__input input" name="city" id="city" type="text" maxlength="32" required>
+                                </label>
+                                <div class="form-about-us__input-block input-block input-block_half">
+                                  <div class="select-country">
+                                    <label class="form-about-us__input-block input-block" for="country" >
+                                      <span class="input-block__placeholder">Country</span>
+                                      <input class="input-block__input select select-country__input input" name="country" id="country" type="text" maxlength="32" required>
+                                    </label>
+                                    <ul class="select-country__menu option-list">
+                                      <li class="select-country__option">Afganistan</li>
+                                      <li class="select-country__option">Albania</li>
+                                      <li class="select-country__option">Algeria</li>
+                                      <li class="select-country__option">Andorra</li>
+                                      <li class="select-country__option">Angola</li>
+                                      <li class="select-country__option">Antigua and Barbuda</li>
+                                      <li class="select-country__option">Argentina</li>
+                                      <li class="select-country__option">Armenia</li>
+                                      <li class="select-country__option">Australia</li>
+                                      <li class="select-country__option">Austria</li>
+                                      <li class="select-country__option">Azerbaijan</li>
+                                      <li class="select-country__option">Bahrain</li>
+                                      <li class="select-country__option">Bangladesh</li>
+                                      <li class="select-country__option">Barbados</li>
+                                      <li class="select-country__option">Belarus</li>
+                                      <li class="select-country__option">Belgium</li>
+                                      <li class="select-country__option">Belize</li>
+                                      <li class="select-country__option">Benin</li>
+                                      <li class="select-country__option">Bolivia</li>
+                                      <li class="select-country__option">Bosnia and Herzegovina</li>
+                                      <li class="select-country__option">Botswana</li>
+                                      <li class="select-country__option">Brazil</li>
+                                      <li class="select-country__option">Brunei</li>
+                                      <li class="select-country__option">Brunswick and Lüneburg</li>
+                                      <li class="select-country__option">Bulgaria</li>
+                                      <li class="select-country__option">Burkina Faso</li>
+                                      <li class="select-country__option">Burma</li>
+                                      <li class="select-country__option">Burundi</li>
+                                      <li class="select-country__option">Cabo Verde</li>
+                                      <li class="select-country__option">Cambodia</li>
+                                      <li class="select-country__option">Cameroon</li>
+                                      <li class="select-country__option">Canada</li>
+                                      <li class="select-country__option">Cayman Islands</li>
+                                      <li class="select-country__option">Central African Republic</li>
+                                      <li class="select-country__option">Chad</li>
+                                      <li class="select-country__option">Chile</li>
+                                      <li class="select-country__option">China</li>
+                                      <li class="select-country__option">Colombia</li>
+                                      <li class="select-country__option">Comoros</li>
+                                      <li class="select-country__option">Congo Free State</li>
+                                      <li class="select-country__option">Costa Rica</li>
+                                      <li class="select-country__option">Cote d’Ivoire</li>
+                                      <li class="select-country__option">Croatia</li>
+                                      <li class="select-country__option">Cuba</li>
+                                      <li class="select-country__option">Cyprus</li>
+                                      <li class="select-country__option">Czechia</li>
+                                      <li class="select-country__option">Czechoslovakia</li>
+                                      <li class="select-country__option">Democratic Republic of the Congo</li>
+                                      <li class="select-country__option">Denmark</li>
+                                      <li class="select-country__option">Djibouti</li>
+                                      <li class="select-country__option">Dominica</li>
+                                      <li class="select-country__option">Dominican Republic</li>
+                                      <li class="select-country__option">Ecuador</li>
+                                      <li class="select-country__option">Egypt</li>
+                                      <li class="select-country__option">El Salvador</li>
+                                      <li class="select-country__option">Equatorial Guinea</li>
+                                      <li class="select-country__option">Eritrea</li>
+                                      <li class="select-country__option">Estonia</li>
+                                      <li class="select-country__option">Eswatini</li>
+                                      <li class="select-country__option">Ethiopia</li>
+                                      <li class="select-country__option">Fiji</li>
+                                      <li class="select-country__option">Finland</li>
+                                      <li class="select-country__option">France</li>
+                                      <li class="select-country__option">Gabon</li>
+                                      <li class="select-country__option">Gambia, The</li>
+                                      <li class="select-country__option">Georgia</li>
+                                      <li class="select-country__option">Germany</li>
+                                      <li class="select-country__option">Ghana</li>
+                                      <li class="select-country__option">Greece</li>
+                                      <li class="select-country__option">Grenada</li>
+                                      <li class="select-country__option">Guatemala</li>
+                                      <li class="select-country__option">Guinea</li>
+                                      <li class="select-country__option">Guinea-Bissau</li>
+                                      <li class="select-country__option">Guyana</li>
+                                      <li class="select-country__option">Haiti</li>
+                                      <li class="select-country__option">Honduras</li>
+                                      <li class="select-country__option">Hungary</li>
+                                      <li class="select-country__option">Iceland</li>
+                                      <li class="select-country__option">India</li>
+                                      <li class="select-country__option">Indonesia</li>
+                                      <li class="select-country__option">Iran</li>
+                                      <li class="select-country__option">Iraq</li>
+                                      <li class="select-country__option">Ireland</li>
+                                      <li class="select-country__option">Israel</li>
+                                      <li class="select-country__option">Italy</li>
+                                      <li class="select-country__option">Jamaica</li>
+                                      <li class="select-country__option">Japan</li>
+                                      <li class="select-country__option">Jordan</li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                          </fieldset>
+                          <fieldset class="pay-form__field">
+                            <legend class="pay-form__legend pay-form__legend_pay _h3-title ">Personal Information</legend>
+                            <ul class="pay-form__list-link">
+                                <li class="pay-form__list-item">
+                                  <a href="#" class="pay-form__pay-link _tt-bottom" title="Pay-pal">
+                                    <img class="pay-form__link-img" src="./images/paypal-dark.svg" alt="paypal logo" class="pay__logo" width="40" height="40">
+                                  </a>
+                                </li>
+                                <li class="pay-form__list-item" >
+                                  <a href="#" class="pay-form__pay-link _tt-bottom" title="Master Card">
+                                    <img class="pay-form__link-img" src="./images/master-dark.svg" alt="paypal logo" class="pay__logo" width="40" height="40">
+                                  </a>
+                                </li>
+                                <li class="pay-form__list-item" >
+                                  <a href="#" class="pay-form__pay-link _tt-bottom" title="Visa">
+                                    <img class="pay-form__link-img" src="./images/visa-dark.svg" alt="paypal logo" class="pay__logo" width="40" height="40">
+                                  </a>
+                                </li>
+                                <li class="pay-form__list-item" >
+                                  <a href="#" class="pay-form__pay-link _tt-bottom" title="Bank Transfer">
+                                    <img class="pay-form__link-img" src="./images/bank-dark.svg" alt="paypal logo" class="pay__logo" width="40" height="40">
+                                  </a>
+                                </li>
+                            </ul>
+                            <div class="pay-form__inputs form">
+                              <div class="form-about-us__input-block input-block">
+                                <div class="select-card">
+                                  <label class="form-about-us__input-block select-card__label input-block select" for="cardSelect" >
+                                    <span class="select-card__placeholder input-block__placeholder">Credit or debit card</span>
+                                    <input class="select-card__input input-block__input input" name="cardSelect" id="cardSelect" type="text" readonly required>
+                                  </label>
+                                  <span class="select-card__arrow arrow-y" aria-hidden="true"></span>
+                                  <ul class="select-card__menu option-list">
+                                      <li class="select-card__option">
+                                        Debit
+                                      </li>
+                                      <li class="select-card__option">
+                                        Credit
+                                      </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <label class="form-about-us__input-block input-block" for="cardNumber" >
+                                <span class="input-block__placeholder">Card number</span>
+                                <input class="input-block__input input" name="cardNumber" id="cardNumber" type="text"  required>
+                              </label>
+                              <div class="form-about-us__input-block input-block">
+                                <label class="form-about-us__input-block input-block input-block_half" for="expiration" >
+                                  <span class="input-block__placeholder">Expiration</span>
+                                  <input class="input-block__input input input-block__input_pair _border" name="expiration" id="expiration" type="text"  required>
+                                </label>
+                                <label class="form-about-us__input-block input-block input-block_half" for="ccv" >
+                                  <span class="input-block__placeholder">CCV</span>
+                                  <input class="input-block__input input input-block__input_pair" name="ccv" id="ccv" type="text" required>
+                                </label>
+                              </div>
+                              <label class="form-about-us__input-block input-block input-block_half" for="zip" >
+                                <span class="input-block__placeholder">ZIP code</span>
+                                <input class="input-block__input input" name="zip" id="zip" type="text" minlength="3" maxlength="9" required>
+                              </label>
+                              <label class="form-about-us__input-block input-block input-block_half" for="other">
+                                <span class="input-block__placeholder">Other</span>
+                                <input class="input-block__input input" name="other" id="other" type="text" maxlength="32">
+                              </label>
+                            </div>
+                        </fieldset>
+                          <fieldset class="pay-form__field">
+                              <legend class="pay-form__legend pay-form__legend_footer _h3-title">Additional Information</legend>
+                              <div class="pay-form__footer">
+                                <label class="form-about-us__input-block input-block" for="messages" >
+                                  <span class="input-block__placeholder">Leave a message</span>
+                                  <textarea class="input-block__area pay-form__area input" name="messages" id="messages" cols="30" rows="10" ></textarea>
+                                </label>
+                                <label class="pay-form__checkbox">
+                                  <input type="radio" name="brek" class="checkbox _brekf">
+                                  <span class="checkbox__icon pay-form__checkbox-icon" tabindex="0" aria-hidden="true"></span>
+                                  <span class="pay-form__checkbox-text">
+                                    I have read and accept <a href="#" class="pay-form__checkbox-link">Terms&nbsp;&&nbsp;Conditions</a>
+                                  </span>
+                              </label>  
+                              </div>
+                              <button class="pay-form__btn main-button" type="submit">confirm and pay</button>
+                          </fieldset>
+                          
+                      </form>
+                      <aside class="booking__aside aside">
+                          <div class="aside__intro aside__intro_confirm">
+                              <span class="aside__intro-title">The Glass Hut</span>
+                              <span class="aside__intro-address">Hafnarfjörður, Iceland</span>
+                          </div>
+                          <div class="aside__search aside__search_confirm popup-link">
+                              <div class="aside__search-block">
+                                  <span class="aside__search-label">Check in</span>
+                                  <span class="aside__search-output">Add dates</span>
+                              </div>
+                              <div class="aside__search-block">
+                                  <span class="aside__search-label">Check out</span>
+                                  <span class="aside__search-output">Add dates</span>
+                              </div>
+                              <div class="aside__search-block">
+                                  <span class="aside__search-label">Guests</span>
+                                  <span class="aside__search-output aside__search-output_quantity">
+                                    <span class="quantity__icon-minus"></span>
+                                    <span class="aside__quantity-output">1</span>
+                                    <span class="quantity__icon-plus"></span>
+                                  </span>
+                              </div>
+                            </div> 
+                          <div class="aside__info">
+                              <article class="aside__info-item">
+                                  <span class="aside__info-text _hat"><span class="aside__main-price">3 200</span>&euro; x <span class="aside__factor">2</span> nights</span>
+                                  <span class="aside__info-price">6 400&euro;</span>
+                              </article>
+                              <article class="aside__info-item">
+                                <span class="aside__info-text">Classic Dinner for one</span>
+                                <span class="aside__info-price">600&euro;</span>
+                              </article>
+                              <article class="aside__info-item">
+                                <span class="aside__info-text">Electric Car Charge</span>
+                                <span class="aside__info-price">800&euro;</span>
+                              </article>
+                              <article class="aside__info-item _discount">
+                                <span class="aside__info-text">10% discount</span>
+                                <span class="aside__info-price _coeff">-200&euro;</span>
+                              </article>
+                          </div>
+                          <hr class="aside__hr">
+                          <div class="aside__total aside__total_confirm">
+                                <span class="aside__total-text">Total</span>
+                                <span class="aside__total-price">7,000&euro;</span>
+                          </div>
+                      </aside>  
+                    </div>
+                </div>
+            </section>           
+        </main>
+        @@include("html/footer.html")
+    </div>
+    @@include("html/popup.html")
+    <script src="main.js"></script>
+</body>
+</html>

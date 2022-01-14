@@ -1,0 +1,42 @@
+.booking {
+
+  &__container {
+    @media (min-width: $xxl) {
+        max-width: $container + px;
+        margin: 0 auto;
+    }
+  }
+
+  &__wrapper {
+    @media (min-width: $lg) {
+      display: flex;
+      justify-content: space-between;
+    }
+    @media (min-width: $xxl) {
+      margin-left: 144px;
+    }
+  }
+  
+  &__aside {
+    margin-bottom: $off-section;
+    @media (min-width: $xs) {
+      margin: 0 auto $off-section auto;
+    }
+    @media (min-width: $lg) {
+      margin: 0  0 $off-section 0;
+      order: 2;
+    }
+  }
+
+  &__supplement {
+    
+    margin-bottom: $off-section;
+    @media (min-width: $xs) {
+      margin: 0 auto $off-section auto;
+    }
+    @media (min-width: $lg) {
+      flex-shrink: 1;
+      margin: 0  $off * 3 $off-section 0;
+    }
+  }
+}

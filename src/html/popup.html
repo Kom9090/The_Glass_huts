@@ -1,0 +1,92 @@
+<div id="calendar" class="popup">
+    <div class="popup__container">
+        <div class="popup__window">
+            <a class="popup__close _close-popup" href="#">
+                <img src="./images/close.svg" alt="close" class="popup__icon-close" />
+            </a>
+            <div class="popup__body">
+                <form action="get" class="popup__book-form book-form">
+                    <button class="book-form__search-btn search-btn search-btn__start search-btn__start_searching" type="button">
+                        <span class="search-btn__label">Check in</span>
+                        <span class="search-btn__output">Add dates</span>
+                    </button>
+                    <button class="book-form__search-btn search-btn search-btn__last" type="button">
+                        <span class="search-btn__label">Check out</span>
+                        <span class="search-btn__output">Add dates</span>
+                    </button>
+                    <div class="book-form__quantity quantity">
+                        <label class="quantity__label" for="quantity">Guests</label>
+                        <div class="quantity__group">
+                            <div class="quantity__btn-wrapper">
+                                <button class="quantity__btn minus-btn" type="button" aria-label="minus button">
+                                    <span class="quantity__icon-minus" ></span>
+                                </button>
+                            </div>
+                            
+                            <input class="quantity__input" type="number" name="quantity" id="quantity" placeholder="1" value="1">
+                            <div class="quantity__btn-wrapper">
+                                <button class="quantity__btn plus-btn" type="button" aria-label="plus button">
+                                    <span class="quantity__icon-plus"></span>
+                                </button>    
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <input type="hidden" class="book-form__hidden-in" name="start" required>
+                    <input type="hidden" class="book-form__hidden-up" name="last" required>
+                    <button class="book-form__submit main-button" type="submit" tabindex="-1" disabled>Book</button>
+                </form>
+                <div class="calendar">
+                    <button class="calendar__arrow calendar__arrow_prev" aria-label="previus month">
+                        <img src="./images/arrow-next.svg" alt="" class="calendar__arrow-img">
+                    </button>
+                    <button class="calendar__arrow calendar__arrow_next" aria-label="next month">
+                        <img src="./images/arrow-next.svg" alt="" class="calendar__arrow-img">
+                    </button>
+                    <div class="calendar__body">
+                        <div class="calendar__header">
+                            <span class="date-month">January 2021</span>    
+                        </div>
+                        <div class="calendar__table">
+                            <div class="weekdays">
+                                    <div class="weekdays__name">SU</div>
+                                    <div class="weekdays__name">MO</div>
+                                    <div class="weekdays__name">TU</div>
+                                    <div class="weekdays__name">WE</div>
+                                    <div class="weekdays__name">TH</div>
+                                    <div class="weekdays__name">FR</div>
+                                    <div class="weekdays__name">ST</div>  
+                            </div>
+                            <div class="days">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendar__body _double">
+                        <div class="calendar__header">
+                            <span class="date-month">January 2021</span>    
+                        </div>
+                        <div class="calendar__table">
+                            <div class="weekdays">
+                                    <div class="weekdays__name">SU</div>
+                                    <div class="weekdays__name">MO</div>
+                                    <div class="weekdays__name">TU</div>
+                                    <div class="weekdays__name">WE</div>
+                                    <div class="weekdays__name">TH</div>
+                                    <div class="weekdays__name">FR</div>
+                                    <div class="weekdays__name">ST</div>  
+                            </div>
+                            <div class="days">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendar__btns">
+                        <button class="calendar__reset" type="reset">Clear dates</button>
+                        <button class="calendar__close main-button">Close</button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

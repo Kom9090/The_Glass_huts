@@ -1,0 +1,118 @@
+.services {
+
+  &__title {
+    font-weight: 600;
+    padding-bottom: 25px;
+    border-bottom: 1px solid $forest;
+    margin-bottom: 24px;
+  }
+
+  &__list-item {
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  &__cart {
+      background-color: $lgreen;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+  }
+
+  &__btn-main {
+    flex: 1 1 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 10px;
+    @media (min-width: $sm) {
+      padding-left: 24px;
+    }
+    @media (any-hover: hover) {
+      &:hover .checkbox__icon {
+          background-color: $forest;
+      }
+      &:hover .checkbox__icon::before, &:hover .checkbox__icon::after {
+          background-color: $white;
+      }
+      &:hover .checkbox:checked + .checkbox__icon {
+        background-color: $dark;
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__name {
+    flex: 0 0 100%;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+
+  &__price {
+  }
+
+  &__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 40%;
+    height: 70px;
+    background-color: transparent;
+    z-index: 10;
+    &::before {
+      @media (min-width: $sm) {
+        position: absolute;
+        content: "Choose your option";
+        top: 25px;
+        right: 55px;
+        font-size: 0.875rem;
+        line-height: 1.3rem;
+        color: $dark;
+        opacity: 0;
+        transition: opacity 0.3s linear;
+      }
+    }
+    @media (any-hover: hover) {
+        &:hover::before {
+            opacity: 1;
+        }
+    }
+    &._close-spr .services__arrow{
+      &::before {
+          transform: rotate(135deg);
+      }
+      &::after {
+          transform: rotate(-135deg);
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    @media (min-width: $sm) {
+      right: 24px;
+    }
+  }
+
+  &__content {
+  }
+
+  &__text-content {
+      padding: 24px;
+      font-size: 0.875rem;
+      line-height: 1.5;
+  }
+
+  &__info {
+    margin-top: $off * 2;
+    line-height: 1.75;
+  }
+}

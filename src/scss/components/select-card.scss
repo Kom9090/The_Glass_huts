@@ -1,0 +1,98 @@
+.select-card {
+  width: 100%;
+  position: relative;
+
+  &__label {
+    @media (any-hover: hover) {
+      &:hover + .select-card__arrow {
+          background-color: $hg;
+      }
+    }
+  }
+
+  &__placeholder {
+    display: flex;
+    align-items: center;
+    &::before {
+      content: url('../../images/credit-card.svg');
+      width: 25px;
+      margin-right: 12px;
+      transition: width 0.3s linear;
+    }
+
+  }
+
+  &__input {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    background-color: $lgreen;
+    pointer-events: none;
+    transition: background-color 0.3s linear;
+    &::after {
+      top: 12px;
+      left: 14px; 
+    }
+    &::before {
+      top: 12px;
+      left: 20px;    
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s linear;
+    width: 100%;
+    background-color: $white;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.25);
+    z-index: 200;    
+    &._show-list {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      top: 55px;
+    }
+  }
+
+  &__option {
+    width: 100%;
+    padding: 7px 24px;  
+    cursor: pointer; 
+    color: $dark;
+    line-height: 1.8; 
+    transition: background-color 0.3s linear;
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: $grey;
+        }
+    }    
+  }
+}
+
+.input-block__placeholder_focus {
+  &.select-card__placeholder::before {
+    display: none;
+  }
+}
+
+._selected + .select-card__arrow::before {
+    transform: rotate(135deg);
+}
+._selected + .select-card__arrow::after {
+    transform: rotate(-135deg);
+}

@@ -1,0 +1,5 @@
+.slogan-title {
+    @include a-sizes("font-size", 40, 18, 1);
+    line-height: 1.4;
+    color: $forest;
+}

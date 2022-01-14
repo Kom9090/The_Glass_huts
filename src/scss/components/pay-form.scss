@@ -1,0 +1,158 @@
+.pay-form {
+
+  &__back {
+        display: inline-block;
+        position: relative;
+        font-family: $font-din;
+        font-weight: 300;
+        line-height: 2.25;
+        text-transform: uppercase;
+        color: $dark;
+        padding-left:53px;
+        margin-bottom: $off * 5;
+        &::before {
+            position: absolute;
+            content: url('../../images/arrow-left.svg');
+            left: 0px;
+            top: calc(50% - 15px);
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $dark;
+            transform: scale(0, 1);
+            transition: transform 0.3s linear;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::after {
+                    transform: scale(1, 1);
+                }
+            }
+        }
+  }
+
+  &__field {
+    width: 100%;
+    margin: 0;
+    margin-bottom: $off * 3;
+    position: relative;
+    @media (min-width: $md) {
+      margin-bottom: $off * 5;
+    }
+    @media (min-width: $lg) {
+      margin-bottom: $off * 7;
+    }
+    border: 0;
+  }
+
+  &__legend {
+    width: 100%;
+    padding-bottom: 25px;
+    border-bottom: 1px solid $forest;
+    font-weight: 400;
+    margin-bottom: 24px;
+    &_pay {
+      padding-bottom: 75px;
+      @media (min-width: 500px) {
+        padding-bottom: 25px;
+      }
+    }
+    &_footer {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  &__list-link {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: -80px;
+    right: 0;
+    min-width: 185px;
+  }
+
+  &__list-item {
+
+  }
+
+  &__pay-link {
+    @media (any-hover: hover) {
+      &:hover {
+          & .pay-form__link-img {
+              filter: drop-shadow(1px 1px 10px rgba(0, 255, 128, 0.55));
+          }
+          
+      }
+    }
+  }
+  &__link-img {
+    transition: filter 0.3s linear;
+    width: auto;
+  }
+
+  &__area {
+    height: 100px;
+    margin-bottom: $off * 3;
+    @media (min-width: $sm) {
+      margin-bottom: $off * 5;
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: $off * 3;
+    @media (min-width: $sm) {
+      margin-bottom: $off * 5;
+    }
+    @media (any-hover: hover) {
+      &:hover .checkbox__icon {
+          background-color: $dark;
+      }
+    }
+  }
+
+  &__checkbox-icon {
+    background-color: $forest;
+    flex-shrink: 0;
+    &::before {
+        background-color: $white;
+    }
+    &::after {
+        background-color: $white;
+    }
+  }
+
+  &__checkbox-text {
+    line-height: 1.75;
+    color: $dark;
+  }
+
+  &__checkbox-link {
+    font-weight: 700;
+    text-decoration-line: underline;
+    color: $forest;
+    transition: color 0.3s linear;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    min-height: 60px;
+    @media (min-width: $sm) {
+      max-width: 384px;
+    }
+  }
+  
+}

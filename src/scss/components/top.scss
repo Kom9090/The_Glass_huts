@@ -1,0 +1,29 @@
+.top {
+    &__section {
+        margin-bottom: $off-section;
+        @media(min-width: $container + px) {
+            margin-bottom: 150px;
+        }
+    }
+    &__button-container {
+        position: relative;
+        @media (min-width: $lg) {
+            max-width: $container - 30 + px;
+            margin: 0 auto;
+        }   
+    }
+    &__button-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        z-index: 2;
+        @media(min-width: $md) {
+            left: calc(5% + 15px);
+            transform: translate(0, 50%);
+        }
+        @media(min-width: $xxl) {
+            left: 146px;
+        }
+    }
+}

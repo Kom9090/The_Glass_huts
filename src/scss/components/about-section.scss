@@ -1,0 +1,68 @@
+.about-section {
+
+    display: flex;
+    position: relative;  
+    margin-bottom: $off-section;
+    @media(min-width: $container + px) {
+        margin-bottom: 150px;
+    }
+    
+    &__block {
+        flex: 0 0 50%;
+        padding-bottom: 45%;
+        @media (min-width: $md + px) {
+            padding-bottom: 39.8%;
+        }
+        @media (min-width: $container + px) {
+            padding-bottom: 560px;
+        }
+        &_first {
+            background: url('../images/about-bg1.jpg') center / cover no-repeat
+        }
+        &_second {
+            background: url('../images/about-bg2.jpg') center / cover no-repeat
+        }
+    }
+
+    &__link {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $lgreen;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-family: $font-din;
+        font-weight: 300;
+        font-size: 1rem;
+        line-height: 1.375;
+        color: #333333;
+        transition: background-color 0.3s linear, box-shadow 0.3s linear, color 0.3s linear;
+        @media (min-width: $md) {
+            width: 127px;
+            height: 127px;
+        }
+        @media (min-width: $lg) {
+            width: 157px;
+            height: 157px;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $forest;
+                box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.55);
+                color: $white;
+            }
+            &:active {
+                background-color: $green;
+            }
+        }
+        &:active {
+            background-color: $green;
+        }
+    }
+}

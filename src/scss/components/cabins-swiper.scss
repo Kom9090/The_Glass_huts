@@ -1,0 +1,51 @@
+.cabins-swiper {
+    &__link {
+        display: block;
+        position: relative;
+        padding-bottom: 89%;
+        overflow: hidden;  
+    }
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__nav-container {
+        position: relative;
+        height: 40px;
+        margin: 0 15px;
+        @media (min-width: $lg) {
+            max-width: $container - 30 + px;
+            margin: 0 auto;
+        }  
+    }
+    &__prev {
+        bottom: 3px;
+        left: 0;
+
+        @media(min-width: $xxl) {
+            left: 146px;
+        }
+    }
+    &__next {
+        bottom: 3px;
+        left: 63px;
+        @media(min-width: $xxl) {
+            left: 209px;
+        }
+    }
+    &__pagination {
+        &.swiper-pagination-progressbar {
+            @media (min-width: $lg) {
+                right: 15px;
+            }
+            @media(min-width: $xxl) {
+                right: 0;
+            }
+        }
+    }
+}
+

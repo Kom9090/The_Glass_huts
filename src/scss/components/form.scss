@@ -1,0 +1,8 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  &__btn {
+    height: 60px;
+  }
+}

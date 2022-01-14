@@ -1,0 +1,17 @@
+.activities {
+
+  &__container {
+    @media (min-width: $lg) {
+      max-width: $cont;
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    margin-bottom: 9%;
+    @media (min-width: $md) {
+      margin-bottom: 7%;
+    }
+  }
+}
+
