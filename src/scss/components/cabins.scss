@@ -36,7 +36,7 @@
             float: right;
             @include a-sizes("width", 697, 180, 1);
             height: calc(352px + 89 * ((100vw - 769px) / (1920 - 769)));
-            background: url("../images/the-bed-features.jpg") 0 0 / cover no-repeat;
+            background: url("./../images/the-bed-features.jpg") 0 0 / cover no-repeat;
             margin: 0 0 4% 5%;
             overflow: hidden;
         }

@@ -23,25 +23,25 @@
       height: 100%;  
     }
     &_hut {
-      background: url("../images/top-hut-bg.jpg") bottom/cover no-repeat;
+      background: url("./../images/top-hut-bg.jpg") bottom/cover no-repeat;
       &::after {
         background-color: rgba(#3333, 0.7);  
       }
     }
     &_area {
-      background: url("../images/areabg.jpg") bottom/cover no-repeat;
+      background: url("./../images/areabg.jpg") bottom/cover no-repeat;
       &::after {
         background-color: rgba(#3333, 0.5);  
       }
     }
     &_about-us {
-      background: url("../images/aboutus.jpg") bottom/cover no-repeat;
+      background: url("./../images/aboutus.jpg") bottom/cover no-repeat;
       &::after {
         background-color: rgba(#3333, 0.6);  
       }
     }
     &_booking {
-      background: url("../images/bookingbg.jpg") bottom/cover no-repeat;
+      background: url("./../images/bookingbg.jpg") bottom/cover no-repeat;
       &::after {
         background-color: rgba(#3333, 0.6);  
       }
