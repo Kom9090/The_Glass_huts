@@ -9,7 +9,10 @@
     
     &__block {
         flex: 0 0 50%;
-        padding-bottom: 45%;
+        padding-bottom: 60%;
+        @media (min-width: $sm) {
+            padding-bottom: 45%;
+        }
         @media (min-width: $md + px) {
             padding-bottom: 39.8%;
         }
@@ -17,10 +20,10 @@
             padding-bottom: 560px;
         }
         &_first {
-            background: url('../images/about-bg1.jpg') center / cover no-repeat
+            background: url('./images/about-bg1.jpg') center / cover no-repeat
         }
         &_second {
-            background: url('../images/about-bg2.jpg') center / cover no-repeat
+            background: url('./images/about-bg2.jpg') center / cover no-repeat
         }
     }
 

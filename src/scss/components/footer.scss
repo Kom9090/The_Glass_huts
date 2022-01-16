@@ -67,6 +67,7 @@
         color: $grey;
         opacity: 0.7;
         margin-top: $off * 2;
+        white-space: nowrap;
         @media (min-width: $lg) {
             margin-top: $off * 7;
         }
