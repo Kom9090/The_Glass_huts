@@ -1,6 +1,6 @@
 .checkbox {
   display: none;
-  &:checked + .checkbox__icon {
+  &:checked ~ .checkbox__icon {
     background-color: $forest;
     &::before {
         width: 10px; 

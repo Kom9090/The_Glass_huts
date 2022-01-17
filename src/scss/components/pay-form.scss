@@ -109,6 +109,7 @@
     display: flex;
     align-items: center;
     margin-bottom: $off * 3;
+    position: relative;
     @media (min-width: $sm) {
       margin-bottom: $off * 5;
     }

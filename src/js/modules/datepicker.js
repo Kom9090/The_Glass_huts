@@ -14,7 +14,9 @@ export const datepicker = () => {
   const searchBook = (date1, date2) => {
     const bookBtn = document.querySelector('.book-form__submit');
     if (date1.value === 'Invalid Date' || date2.value === 'Invalid Date') {
-      bookBtn.setAttribute('disabled');
+      if (!bookBtn.getAttribute('disabled')) {
+        bookBtn.setAttribute('disabled');
+      }
     } else {
       bookBtn.removeAttribute('disabled');
     }

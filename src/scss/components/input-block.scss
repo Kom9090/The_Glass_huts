@@ -55,18 +55,32 @@
       transition: box-shadow 0.3s linear, border-color 0.3s linear;
       @media (any-hover: hover) {
           &:hover {
-            box-shadow: 0px 0px 7px rgba(0, 255, 128, 0.55);
+            box-shadow: 0px 0px 5px rgba($forest, 0.55);
+            
           }
       }
       &:focus {
-         border-color: $green;
-         box-shadow: 0px 0px 7px rgba(0, 255, 128, 0.55);
+         border-color: $forest;
+         box-shadow: inset 1px 1px 7px rgba($forest, 0.35);
       }
       &._border {
         border-right: 1px solid transparent;
       }
       &_pair {
         width: 100px;
+      }
+      &._invalid {
+        box-shadow: 0px 0px 5px rgba(255, 51, 0, 0.35);
+        border-color:rgb(255, 51, 0)
+      }
+      &._valid {
+        border-color: $green;
+        box-shadow: 0px 0px 5px rgba(0, 255, 128, 0.45);
+        @media (any-hover: hover) {
+          &:hover {
+            box-shadow: 0px 0px 5px rgba(0, 255, 128, 0.45);
+          }
+        }
       }
   }
 
@@ -85,12 +99,23 @@
       transition: box-shadow 0.3s linear, border-color 0.3s linear;
       @media (any-hover: hover) {
           &:hover {
-              box-shadow: 0px 0px 7px rgba(0, 255, 128, 0.55);
+              box-shadow: 0px 0px 5px rgba(0, 255, 128, 0.35);
           }
       }
       &:focus {
          border-color: $green;
-         box-shadow: 0px 0px 7px rgba(0, 255, 128, 0.55);
+         box-shadow: 0px 0px 5px rgba(0, 255, 128, 0.35);
       }
+  }
+
+  &__error {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    font-size: 12px;
+    color: rgb(236, 47, 0);
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.9;
   }
 }

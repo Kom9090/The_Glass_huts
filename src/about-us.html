@@ -14,8 +14,8 @@
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#333333">
     <!-- styles -->
-    <link rel="stylesheet" href="libs.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="libs.min.css">
+    <link rel="stylesheet" href="style.min.css">
 </head>
 <body class="margin">
     @@include("html/header.html")
@@ -25,7 +25,7 @@
             <div class="main-header__wrapper main-header__wrapper_about-us">
               <h1 class="main-header__title _h1-title">About Us</h1>
               <div class="main-header__btn-block">
-                <a class="main-header__transparent-btn" href="#firstName" target="blank">Contact us</a>
+                <a class="main-header__transparent-btn _anchor" href="#firstName" target="blank">Contact us</a>
                 <a class="main-header__transparent-btn" href="faq.html" target="blank">Read FAQ</a>
               </div>
             </div>
@@ -78,22 +78,26 @@
           <div class="contact-section">
             <div class="contact-section__container _container">  
                 <div class="contact-section__wrapper">
-                  <form action="get" class="form form-about-us contact-section__form-about-us" data-aos="fade-in" data-aos-delay="200">
+                  <form action="GET" class="form form-about-us contact-section__form-about-us" name="contactForm" novalidate>
                       <label class="form-about-us__input-block input-block input-block_half" for="firstName">
                         <span class="input-block__placeholder">First Name</span>
-                        <input class="input-block__input input scrollto" name="firstName" id="firstName" type="text" required>
+                        <input class="input-block__input input scrollto" minlength="2" maxlength="32" name="firstName" id="firstName" type="text" required>
+                        <span class="input-block__error" aria-live="polite"></span>
                       </label>
                       <label class="form-about-us__input-block input-block input-block_half" for="lastName" >
                         <span class="input-block__placeholder">Last Name</span>
-                        <input class="input-block__input input" name="lastName" id="lastName" type="text"  required>
+                        <input class="input-block__input input" minlength="2" maxlength="32" name="lastName" id="lastName" type="text"  required>
+                        <span class="input-block__error" aria-live="polite"></span>
                       </label>
-                      <label class="form-about-us__input-block input-block" for="email" >
+                      <label class="form-about-us__input-block input-block" for="emailC" >
                         <span class="input-block__placeholder">Email</span>
-                        <input class="input-block__input input" name="email" id="email" type="email"  required>
+                        <input class="input-block__input input" name="emailC" id="emailC" type="email"  required>
+                        <span class="input-block__error" aria-live="polite"></span>
                       </label>
                       <label class="form-about-us__input-block input-block" for="subject" >
                         <span class="input-block__placeholder">Subject</span>
                         <input class="input-block__input input" name="subject" id="subject" type="text" >
+                        <span class="input-block__error" aria-live="polite"></span>
                       </label>
                       <label class="form-about-us__input-block input-block" for="message" >
                         <span class="input-block__placeholder">Message</span>

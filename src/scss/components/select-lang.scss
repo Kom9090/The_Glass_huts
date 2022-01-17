@@ -1,10 +1,10 @@
 .select-lang {
     position: relative;
-    margin-left: -9px;
+    margin-left: 0;
     display: flex;
     align-items: center;
-    @media (max-width: $lg) {
-        margin-left: 0;
+    @media (min-width: $lg) {
+        margin-left: -9px;
     }
 		&__btn {
             padding: 0;
@@ -50,16 +50,15 @@
             visibility: hidden;
             pointer-events: none;
             transition: opacity 0.4s linear;
-            width: 43px;
-            background-color: rgba(255, 255, 255, 0.25);
+            background-color: transparent;
             box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.25);
             backdrop-filter: blur(4px);
             z-index: 200;
-            @media (max-width: $lg) {
-                background-color: transparent;
-                box-shadow: none;
-                backdrop-filter: none;
-                width: auto;
+            @media (min-width: $lg) {
+                background-color: rgba(255, 255, 255, 0.25);
+                box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.25);
+                backdrop-filter: blur(4px);
+                width: 43px;
             }
             &._show-list {
                 opacity: 1;

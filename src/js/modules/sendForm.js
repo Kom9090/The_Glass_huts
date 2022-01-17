@@ -37,8 +37,8 @@ export const sendForm = () => {
     factor.textContent = (((new Date(inputLast.value) - new Date(inputStart.value)) / 86400000) + 1).toFixed(0);
   };
   document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.book-form');
     if (document.querySelector('.booking')) {
-      const form = document.querySelector('.book-form');
       // eslint-disable-next-line no-inner-declarations
       async function sendBook(event) {
         event.preventDefault();
@@ -47,6 +47,19 @@ export const sendForm = () => {
         total();
       }
       form.addEventListener('submit', sendBook);
+    } else {
+      // eslint-disable-next-line no-inner-declarations
+      async function getLocalHistory(event) {
+        event.preventDefault();
+        const inputStart = document.querySelector('.book-form__hidden-in').value;
+        const inputLast = document.querySelector('.book-form__hidden-up').value;
+        const quantityInput = document.querySelector('.quantity__input').value;
+        localStorage.setItem('start', inputStart);
+        localStorage.setItem('last', inputLast);
+        localStorage.setItem('quantity', quantityInput);
+        document.location.href = '../booking.html';
+      }
+      form.addEventListener('submit', getLocalHistory);
     }
   });
 };

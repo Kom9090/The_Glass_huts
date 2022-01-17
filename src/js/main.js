@@ -14,13 +14,6 @@ import Swiper from 'swiper/bundle';
 //= ==============================================================
 //= ================ fslightbox ==================================
 require('../../node_modules/fslightbox/index.js');
-if (document.querySelector('.cabins')) {
-  // eslint-disable-next-line no-undef
-  fsLightboxInstances.gallery.props.exitFullscreenOnClose = true;
-} else if (document.querySelector('.gallery')) {
-  // eslint-disable-next-line no-undef
-  fsLightboxInstances.gallery2.props.exitFullscreenOnClose = true;
-}
 //= ==============================================================
 //= ================ leaflet =====================================
 require('../../node_modules/leaflet/dist/leaflet.js');
@@ -78,38 +71,8 @@ if (!IS_MOBILE) {
 }
 
 //= ==============================================================
-if (document.querySelector('.cabins')) {
-  fsLightboxInstances.gallery.props.onOpen = () => {
-    const body = document.body;
-    const headerWrapper = document.querySelector('.header__wrapper');
-
-    if (IS_MOBILE) {
-      body.style.marginRight = '0px';
-    } else {
-      headerWrapper.style.paddingRight = '17px';
-    }
-  };
-  fsLightboxInstances.gallery.props.onClose = () => {
-    const headerWrapper = document.querySelector('.header__wrapper');
-    headerWrapper.style.paddingRight = '0px';
-  };
-} else if (document.querySelector('.gallery')) {
-  fsLightboxInstances.gallery2.props.onOpen = () => {
-    const body = document.body;
-    const headerWrapper = document.querySelector('.header__wrapper');
-
-    if (IS_MOBILE) {
-      body.style.marginRight = '0px';
-    } else {
-      headerWrapper.style.paddingRight = '17px';
-    }
-  };
-  fsLightboxInstances.gallery2.props.onClose = () => {
-    const headerWrapper = document.querySelector('.header__wrapper');
-    headerWrapper.style.paddingRight = '0px';
-  };
-}
-
+import { lightboxes } from './modules/lightboxes.js';
+lightboxes();
 //= ==================================================================
 
 const logoAnimation = new Vivus(
@@ -169,7 +132,7 @@ if (document.querySelector('.cabins__swiper')) {
       let div = document.createElement('div');
       if (e.matches) {
         div.className = 'swiper-slide _slide-remove';
-        div.innerHTML = `<a class="cabins-swiper__link link-cover" data-fslightbox="galery" href="./images/gallery0.jpg">
+        div.innerHTML = `<a class="cabins-swiper__link link-cover" data-fslightbox="gallery" href="./images/gallery0.jpg">
                                     <img src="./images/the-bed-features.jpg" class="swiper-lazy cabins-swiper__img" alt="d" />
                                 </a>`;
         const wrapper = document.querySelector('.cabins-swiper__wrapper');
@@ -276,9 +239,8 @@ labelToTop();
 
 import smoothscroll from 'smoothscroll-polyfill';
 smoothscroll.polyfill();
-
-const anchors = document.querySelectorAll('a[href^="#"]');
-anchors.forEach(anchor => {
+if (document.querySelector('._anchor')) {
+  const anchor = document.querySelector('._anchor');
   anchor.addEventListener('click', function (event) {
     event.preventDefault();
 
@@ -298,7 +260,7 @@ anchors.forEach(anchor => {
     }
     setTimeout(getInputFocus, 500);
   });
-});
+}
 
 import { spoller } from './modules/spoller.js';
 spoller();
@@ -315,28 +277,53 @@ addDiscount();
 import { submitBook } from './modules/submitBook.js';
 submitBook();
 
-document.querySelector('.select-country__input').addEventListener('input', function() {
-  let val = this.value.trim();
-  const countryOptions = document.querySelectorAll('.select-country__option');
-  if (val !== '') {
-    document.querySelector('.select-country__menu').classList.add('_show-list');
-    countryOptions.forEach(function(item) {
-      if (item.innerText.search(val) == -1) {
-        item.classList.add('_hide');
-      } else {
+import IMask from 'imask';
+import { formValidation } from './modules/formValidation.js';
+if (document.querySelector('.confirm')) {
+  document.querySelector('.select-country__input').addEventListener('input', function () {
+    let val = this.value.trim();
+    const countryOptions = document.querySelectorAll('.select-country__option');
+    if (val !== '') {
+      document.querySelector('.select-country__menu').classList.add('_show-list');
+      countryOptions.forEach(function (item) {
+        if (item.innerText.search(val) == -1) {
+          item.classList.add('_hide');
+        } else {
+          item.classList.remove('_hide');
+        }
+      });
+    } else {
+      countryOptions.forEach(function (item) {
         item.classList.remove('_hide');
-      }
-    });
-  } else {
-    countryOptions.forEach(function(item) {
-      item.classList.remove('_hide');
-    });
-  }
-  countryOptions.forEach(function (item) {
-    item.addEventListener('click', () => {
-      let countryValue = document.querySelector('.select-country__input');
-      countryValue.value = item.textContent;
-      countryValue.focus();
+      });
+    }
+    countryOptions.forEach(function (item) {
+      item.addEventListener('click', () => {
+        let countryValue = document.querySelector('.select-country__input');
+        countryValue.value = item.textContent;
+        countryValue.focus();
+      });
     });
   });
-});
+  document.addEventListener('click', (event) => {
+    const countryMenu = document.querySelector('.select-country__menu');
+    if (!event.target.closest('.select-country__input')) {
+      countryMenu.classList.remove('_show-list');
+    }
+  });
+  const element = document.getElementById('phone');
+  const maskOptions = {
+    mask: '+{38}(000)000-00-00'
+  };
+  const mask = IMask(element, maskOptions);
+  formValidation('payForm');
+}
+if (document.querySelector('.about-us')) {
+  formValidation('contactForm');
+}
+
+import { subscribe } from './modules/subscribe.js';
+subscribe();
+
+import { history } from './modules/history.js';
+history();

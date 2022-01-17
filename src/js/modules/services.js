@@ -30,8 +30,8 @@ export const services = () => {
           const aside = document.createElement('aside');
           const asideItems = document.querySelectorAll('.aside__info-item');
           aside.className = `aside__info-item ${checkbox.classList[1]}`;
-          aside.innerHTML = `<span class="aside__info-text">${text}</span>
-          <span class="aside__info-price">${price}</span>`;
+          aside.innerHTML = `<span class="aside__info-text _text">${text}</span>
+          <span class="aside__info-price _price">${price}</span>`;
           for (let i = 0; i < asideItems.length; i++) {
             if (asideItems[i].classList.contains(`${checkbox.classList[1]}`)) {
               asideItems[i].remove();

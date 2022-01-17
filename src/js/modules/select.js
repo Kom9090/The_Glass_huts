@@ -4,32 +4,10 @@ export const customSelect = () => {
   const optionLists = document.querySelectorAll('.option-list');
   const selectLang = document.querySelector('.select-lang');
   const selectTel = document.querySelector('.select-code');
-  const selectCountry = document.querySelector('.select-country');
   const cardSelect = document.querySelector('.select-card');
   const langOptions = document.querySelectorAll('.select-lang__option');
   const codeOptions = document.querySelectorAll('.select-code__option');
-  const countryOptions = document.querySelectorAll('.select-country__option');
   const cardOptions = document.querySelectorAll('.select-card__option');
-
-  // eslint-disable-next-line func-names
-  selects.forEach(function (select, i) {
-    let selectParent = select.parentElement;
-    select.addEventListener('click', () => {
-      optionLists[i].classList.toggle('_show-list');
-      select.classList.toggle('_selected');
-    });
-
-    localChanges(selectParent, select);
-
-    document.addEventListener('click', (event) => {
-      if (!event.target.closest('.select')) {
-        for (let n = 0; n < optionLists.length; n++) {
-          optionLists[n].classList.remove('_show-list');
-          select.classList.remove('_selected');
-        }
-      }
-    });
-  });
   function localChanges(selectParent, select) {
     // eslint-disable-next-line default-case
     switch (selectParent) {
@@ -64,4 +42,22 @@ export const customSelect = () => {
         break;
     }
   }
+  selects.forEach((select, i) => {
+    let selectParent = select.parentElement;
+    select.addEventListener('click', () => {
+      optionLists[i].classList.toggle('_show-list');
+      select.classList.toggle('_selected');
+    });
+
+    localChanges(selectParent, select);
+
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.select')) {
+        for (let n = 0; n < optionLists.length; n++) {
+          optionLists[n].classList.remove('_show-list');
+          select.classList.remove('_selected');
+        }
+      }
+    });
+  });
 };

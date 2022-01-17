@@ -21,3 +21,4 @@ Website for the hotel, educational project
 - vivus;
 - swiper;
 - fslightbox;
+- IMask
