@@ -23,29 +23,89 @@ require('../../node_modules/leaflet-gesture-handling/dist/leaflet-gesture-handli
 //= ==============================================================
 //= ================ AOS =========================================
 import AOS from 'aos';
-
+//= ==============================================================
+//= ================ popup  ======================================
+import popup from './modules/popup.js';
+//= ==============================================================
+//= ================ ======================================
+import { burgerMenu } from './modules/burger.js';
+//= ==============================================================
+//= ================ ======================================
+import { fixedHeader } from './modules/fixed-header.js';
+//= ==============================================================
+//= ================ ======================================
+import { customSelect } from './modules/select.js';
+//= ==============================================================
+//= ================ ======================================
+import { lightboxes } from './modules/lightboxes.js';
+//= ==============================================================
+//= ================ ======================================
+import { hideText } from './modules/hideText.js';
+//= ==============================================================
+//= ================ ======================================
+import { quantity } from './modules/quantity.js';
+//= ==============================================================
+//= ================ ======================================
+import { calendar } from './modules/calendar.js';
+//= ==============================================================
+//= ================ ======================================
+import { datepicker } from './modules/datepicker.js';
+//= ==============================================================
+//= ================ ======================================
+import { tabs } from './modules/tabs.js';
+//= ==============================================================
+//= ================ ======================================
+import { labelToTop } from './modules/label.js';
+//= ==============================================================
+//= ================ ======================================
+import smoothscroll from 'smoothscroll-polyfill';
+//= ==============================================================
+//= ================ ======================================
+import { spoller } from './modules/spoller.js';
+//= ==============================================================
+//= ================ ======================================
+import { services } from './modules/services.js';
+//= ==============================================================
+//= ================ ======================================
+import { sendForm } from './modules/sendForm.js';
+//= ==============================================================
+//= ================ ======================================
+import { addDiscount } from './modules/addDiscount.js';
+//= ==============================================================
+//= ================ ======================================
+import { submitBook } from './modules/submitBook.js';
+//= ==============================================================
+//= ================ ======================================
+import IMask from 'imask';
+//= ==============================================================
+//= ================ ======================================
+import { searchCountry } from './modules/searchCountry.js';
+//= ==============================================================
+//= ================ ======================================
+import { formValidation } from './modules/formValidation.js';
+//= ==============================================================
+//= ================ ======================================
+import { subscribe } from './modules/subscribe.js';
+//= ==============================================================
+//= ================ ======================================
+import { history } from './modules/history.js';
+//= ==============================================================
 AOS.init({
   disable: 'mobile',
   once: true,
   duration: 1500
 });
-//= ==============================================================
-//= ================== popup =====================================
-import popup from './modules/popup.js';
+//= ==================  =====================================
 popup();
 //= ==============================================================
 
 const IS_MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
 
 //= ================ header ======================================
-
-import { burgerMenu } from './modules/burger.js';
 burgerMenu();
 
-import { fixedHeader } from './modules/fixed-header.js';
 fixedHeader();
 
-import { customSelect } from './modules/select.js';
 customSelect();
 
 //= ==============================================================
@@ -71,7 +131,6 @@ if (!IS_MOBILE) {
 }
 
 //= ==============================================================
-import { lightboxes } from './modules/lightboxes.js';
 lightboxes();
 //= ==================================================================
 
@@ -86,41 +145,18 @@ const logoAnimation = new Vivus(
 //= =================================================================
 
 import {
-  swiperIntro, swiperCabins, swiperBanners, swiperOutside, swiperInside, swiperPracticalities
+  swiperIntro, 
+  swiperCabins, 
+  swiperBanners, 
+  swiperOutside, 
+  swiperInside, 
+  swiperPracticalities
 } from './modules/sliders.js';
 
 //= =================================================================
 //= == button "more" ================================================
 
-if (document.querySelector('.btn-more')) {
-  const btnsMore = document.querySelectorAll('.btn-more');
-  btnsMore.forEach(item => {
-    item.addEventListener('click', () => {
-      if (item.textContent === 'Read More') {
-        item.textContent = 'Hide More';
-        item.previousElementSibling.classList.add('_all-text');
-        item.previousElementSibling.style.opacity = '0.4';
-        item.previousElementSibling.style.height = item.previousElementSibling.scrollHeight + 'px';
-        const slowChanges = () => {
-          item.previousElementSibling.style.opacity = '1';
-          item.previousElementSibling.style.height = 'auto';
-        };
-        window.setTimeout(slowChanges, 500);
-      } else {
-        const scrollTopValue = -(item.previousElementSibling.scrollHeight - 210);
-        window.scrollBy(0, scrollTopValue);
-        item.previousElementSibling.style.opacity = '0.4';
-        item.previousElementSibling.classList.remove('_all-text');
-        item.previousElementSibling.style.removeProperty('height');
-        item.textContent = 'Read More';
-        const opacityChange = () => {
-          item.previousElementSibling.style.opacity = '1';
-        };
-        window.setTimeout(opacityChange, 500);
-      }
-    });
-  });
-}
+hideText();
 
 //= ==================================================================
 //= ================== bg image go to slider =========================
@@ -222,23 +258,17 @@ if (document.getElementById('area')) {
 }
 
 //= ======================================================================
-import { quantity } from './modules/quantity.js';
 quantity('.quantity__input', '.minus-btn', '.plus-btn');
 //= =======================================================================
-import { calendar } from './modules/calendar.js';
 calendar();
 // ========================================================================
-import { datepicker } from './modules/datepicker.js';
 datepicker();
 // ========================================================================
-import { tabs } from './modules/tabs.js';
 tabs();
 // =========================================================================
-import { labelToTop } from './modules/label.js';
 labelToTop();
-
-import smoothscroll from 'smoothscroll-polyfill';
 smoothscroll.polyfill();
+// =========================================================================
 if (document.querySelector('._anchor')) {
   const anchor = document.querySelector('._anchor');
   anchor.addEventListener('click', function (event) {
@@ -261,56 +291,20 @@ if (document.querySelector('._anchor')) {
     setTimeout(getInputFocus, 500);
   });
 }
-
-import { spoller } from './modules/spoller.js';
+// ===========================================================================
 spoller();
 
-import { services } from './modules/services.js';
 services();
 
-import { sendForm } from './modules/sendForm.js';
 sendForm();
 
-import { addDiscount } from './modules/addDiscount.js';
 addDiscount();
 
-import { submitBook } from './modules/submitBook.js';
 submitBook();
 
-import IMask from 'imask';
-import { formValidation } from './modules/formValidation.js';
+// import { binking } from 'binking';
 if (document.querySelector('.confirm')) {
-  document.querySelector('.select-country__input').addEventListener('input', function () {
-    let val = this.value.trim();
-    const countryOptions = document.querySelectorAll('.select-country__option');
-    if (val !== '') {
-      document.querySelector('.select-country__menu').classList.add('_show-list');
-      countryOptions.forEach(function (item) {
-        if (item.innerText.search(val) == -1) {
-          item.classList.add('_hide');
-        } else {
-          item.classList.remove('_hide');
-        }
-      });
-    } else {
-      countryOptions.forEach(function (item) {
-        item.classList.remove('_hide');
-      });
-    }
-    countryOptions.forEach(function (item) {
-      item.addEventListener('click', () => {
-        let countryValue = document.querySelector('.select-country__input');
-        countryValue.value = item.textContent;
-        countryValue.focus();
-      });
-    });
-  });
-  document.addEventListener('click', (event) => {
-    const countryMenu = document.querySelector('.select-country__menu');
-    if (!event.target.closest('.select-country__input')) {
-      countryMenu.classList.remove('_show-list');
-    }
-  });
+  searchCountry();
   const element = document.getElementById('phone');
   const maskOptions = {
     mask: '+{38}(000)000-00-00'
@@ -322,8 +316,14 @@ if (document.querySelector('.about-us')) {
   formValidation('contactForm');
 }
 
-import { subscribe } from './modules/subscribe.js';
 subscribe();
 
-import { history } from './modules/history.js';
 history();
+
+// const $cardNumberField = document.getElementById('cardNumber');
+// function initMasks() {
+//   cardNumberMask = IMask($cardNumberField, {
+//     mask: binking.defaultResult.cardNumberMask
+//   });
+// }
+// initMasks();

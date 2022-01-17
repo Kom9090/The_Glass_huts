@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
+//= ================ fslightbox ==================================
 require('../../../node_modules/fslightbox/index.js');
+//= ==============================================================
 import { getScrollbarWidth } from "./getScrollbarWidth";
 export const lightboxes = () => {
   if (document.querySelector('.cabins')) {

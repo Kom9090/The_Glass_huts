@@ -47,6 +47,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.0",
     "aos": "^2.3.4",
+    "binking": "^2.0.7",
     "fslightbox": "^3.3.1",
     "imask": "^6.2.2",
     "leaflet": "^1.7.1",
