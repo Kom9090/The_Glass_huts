@@ -312,7 +312,7 @@ if (document.querySelector('.confirm')) {
   const mask = IMask(element, maskOptions);
   formValidation('payForm');
 }
-if (document.querySelector('.about-us')) {
+if (document.querySelector('.form-about-us')) {
   formValidation('contactForm');
 }
 
@@ -327,3 +327,6 @@ history();
 //   });
 // }
 // initMasks();
+
+import { topImage } from './modules/top-image.js';
+topImage();

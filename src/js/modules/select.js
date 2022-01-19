@@ -14,8 +14,10 @@ export const customSelect = () => {
       case selectLang:
         langOptions.forEach(function (item) {
           item.addEventListener('click', () => {
+            item.after(select.nextElementSibling);
             item.prepend(select.firstElementChild);
             select.prepend(item.lastElementChild);
+            select.after(item.parentElement.lastElementChild);
             select.nextElementSibling.classList.remove('_show-list');
             select.classList.remove('_selected');
           });

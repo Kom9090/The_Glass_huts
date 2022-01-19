@@ -13,7 +13,7 @@ const webpCss = require('gulp-webp-css');
 
 //scss task 
 const scss = () => {
-    return src(path.scss.src, { sourcemaps: true })
+    return src(path.scss.src, { sourcemaps: false })
         .pipe(sass())
         .pipe(webpCss())
         .pipe(src(path.scss.lib))
@@ -21,10 +21,10 @@ const scss = () => {
         .pipe(autoprefixer())
         .pipe(shorthand())
         .pipe(gcmq())
-        .pipe(dest(path.scss.docs, { sourcemaps: true }))
+        .pipe(dest(path.scss.docs, { sourcemaps: false }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(csso())
-        .pipe(dest(path.scss.docs, { sourcemaps: true }))
+        .pipe(dest(path.scss.docs, { sourcemaps: false }))
 }
 
 module.exports = scss;
