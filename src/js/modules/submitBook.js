@@ -20,7 +20,7 @@ export const submitBook = () => {
         localStorage.setItem('discount', 0);
       }
       localStorage.setItem('factor', factor);
-      location.href = '/The_Glass_huts/confirm.html';
+      location.assign('https://kom9090.github.io/The_Glass_huts/confirm.html');
     }
     if (document.querySelector('.booking')) {
       asideForm.addEventListener('submit', sendForm);
