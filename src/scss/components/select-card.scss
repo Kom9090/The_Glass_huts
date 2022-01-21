@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     &::before {
-      content: url('../../images/credit-card.svg');
+      content: url('./../images/credit-card.svg');
       width: 25px;
       margin-right: 12px;
       transition: width 0.3s linear;

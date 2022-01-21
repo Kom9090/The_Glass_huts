@@ -20,6 +20,7 @@ export const searchCountry = () => {
       item.addEventListener('click', () => {
         let countryValue = document.querySelector('.select-country__input');
         countryValue.value = item.textContent;
+        countryValue.classList.add('_valid');
         countryValue.focus();
       });
     });
