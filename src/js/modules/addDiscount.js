@@ -11,7 +11,7 @@ export const addDiscount = () => {
     event.preventDefault();
     sending(discountForm, 'add');
     if (discountInput.validity.valid && discountInput.value !== '') {
-      let response = await fetch('../index.html', {
+      let response = await fetch('./index.html', {
         method: 'GET'
       });
       if (response.ok) {
