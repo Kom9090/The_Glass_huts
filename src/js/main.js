@@ -329,4 +329,6 @@ history();
 // initMasks();
 
 import { topImage } from './modules/top-image.js';
-topImage();
+if (document.querySelector('.intro')) {
+  topImage();
+}

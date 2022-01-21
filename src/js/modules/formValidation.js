@@ -1,3 +1,5 @@
+import { sending } from "./addSending";
+
 export const formValidation = (elem) => {
   const form = document.forms[elem];
   const inputs = form.querySelectorAll('.input[required]');
@@ -70,7 +72,7 @@ export const formValidation = (elem) => {
     });
     let error = isError();
     if (!error) {
-      form.classList.add('_sending');
+      sending(form, 'add');
       let response = await fetch('../index.html', {
         method: 'POST'
       });
@@ -78,10 +80,10 @@ export const formValidation = (elem) => {
         let result = await response.json();
         alert(result.message);
         form.reset();
-        form.classList.remove('_sending');
+        sending(form, 'remove');
       } else {
         alert('Error');
-        form.classList.remove('_sending');
+        sending(form, 'remove');
       }
     }
   }

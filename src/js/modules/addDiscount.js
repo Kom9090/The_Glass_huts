@@ -1,4 +1,5 @@
 import { total } from "./total";
+import { sending } from "./addSending";
 
 export const addDiscount = () => {
   const discountForm = document.querySelector('.aside__discount');
@@ -8,13 +9,13 @@ export const addDiscount = () => {
   }
   async function getDiscount(event) {
     event.preventDefault();
-    discountForm.classList.add('_sending');
+    sending(discountForm, 'add');
     if (discountInput.validity.valid && discountInput.value !== '') {
       let response = await fetch('../index.html', {
         method: 'GET'
       });
       if (response.ok) {
-        discountForm.classList.remove('_sending');
+        sending(discountForm, 'remove');
         const discountIs = document.querySelector('._discount');
         if (discountIs) {
           discountIs.remove();

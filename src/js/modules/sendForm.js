@@ -57,7 +57,7 @@ export const sendForm = () => {
         localStorage.setItem('start', inputStart);
         localStorage.setItem('last', inputLast);
         localStorage.setItem('quantity', quantityInput);
-        document.replace('https://kom9090.github.io/The_Glass_huts/booking.html');
+        location.href = '/The_Glass_huts/booking.html';
       }
       form.addEventListener('submit', getLocalHistory);
     }
