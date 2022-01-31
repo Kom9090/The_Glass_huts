@@ -37,6 +37,7 @@ export const customSelect = () => {
         cardOptions.forEach(function (item) {
           item.addEventListener('click', () => {
             let cardValue = document.querySelector('.select-card__input');
+            cardValue.classList.add('_valid');
             cardValue.value = item.textContent;
             cardValue.focus();
           });
@@ -55,7 +56,7 @@ export const customSelect = () => {
 
     document.addEventListener('click', (event) => {
       if (!event.target.closest('.select')) {
-        for (let n = 0; n < optionLists.length; n++) {
+        for (let n = 0; n < optionLists.length; n += 1) {
           optionLists[n].classList.remove('_show-list');
           select.classList.remove('_selected');
         }
